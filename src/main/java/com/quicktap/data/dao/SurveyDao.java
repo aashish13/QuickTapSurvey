@@ -37,4 +37,15 @@ public class SurveyDao implements ParentDao{
 		Session session=sessionFactory.getCurrentSession();
 		return (ArrayList) session.createQuery("From Surveys").list();
 	}
+
+	/**
+	 * @param surveyId
+	 * @return
+	 */
+	public Surveys getById(int surveyId) {
+		Session session=sessionFactory.getCurrentSession();
+		return (Surveys)session.createQuery("From Surveys where surveyId="+surveyId).list().get(0);
+	}
+	
+	
 }

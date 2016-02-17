@@ -34,4 +34,13 @@ public class SurveyService{
 	public ArrayList getSurveyByUsername(String string) {
 		return surveyDao.getSurveyByUsername(string);
 	}
+
+	/**
+	 * @param surveyId
+	 * @return
+	 */
+	public Surveys getById(int surveyId) {
+		// TODO Auto-generated method stub
+		return surveyDao.getById(surveyId);
+	}
 }

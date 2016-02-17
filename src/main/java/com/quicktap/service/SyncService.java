@@ -23,7 +23,7 @@ import com.quicktap.integration.apihelper.data.ApiSurveyDO;
 public class SyncService {
 	
 	@Autowired
-	private SurveyService surveyServise;
+	private SurveyService surveyService;
 	
 	public boolean loginQuickTap(String username){
 		return false;
@@ -37,7 +37,8 @@ public class SyncService {
 			survey.setSurveyId(surveys[i].getSurveyId());
 			survey.setName(surveys[i].getSurveyName());
 			survey.setLastSynchTime(Utils.getTime());
-			surveyServise.add(survey);
+			if(surveyService.getById(surveys[i].getSurveyId())==null)
+				surveyService.add(survey);
 		}
 		
 		return null;
