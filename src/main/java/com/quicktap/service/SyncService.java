@@ -26,13 +26,11 @@ public class SyncService {
 	private SurveyService surveyServise;
 	
 	public boolean loginQuickTap(String username){
-		username = "esha1";
-		String password = "Eshasherry1";
-		String apiKey = "CN0JRMCZSQMHYGOSA42K20XNGZP4U54I";
 		return false;
 	}
 	
 	public ArrayList synchAllSurveys(){
+		//TODO directly using the method from main need to implement with jersey
 		ApiSurveyDO[] surveys=Main.getSurveyList();
 		for (int i = 0; i < surveys.length; i++) {
 			Surveys survey=new Surveys();
@@ -40,7 +38,6 @@ public class SyncService {
 			survey.setName(surveys[i].getSurveyName());
 			survey.setLastSynchTime(Utils.getTime());
 			surveyServise.add(survey);
-			System.out.println("Aashish ---------- "+survey.getId());
 		}
 		
 		return null;

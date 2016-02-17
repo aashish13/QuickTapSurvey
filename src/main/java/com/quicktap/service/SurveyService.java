@@ -3,6 +3,8 @@
  */
 package com.quicktap.service;
 
+import java.util.ArrayList;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +25,13 @@ public class SurveyService{
 	
 	public int add(Surveys survey){
 		return surveyDao.add(survey);
+	}
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	public ArrayList getSurveyByUsername(String string) {
+		return surveyDao.getSurveyByUsername(string);
 	}
 }

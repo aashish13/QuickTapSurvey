@@ -46,36 +46,30 @@
 								</tr>
 							</thead>
 							<tbody>
+								<c:forEach var="survey" items="${surveys}">
+									<tr>
+									<td>${survey.id}</td>
+										<td>${survey.surveyId}</td>
+										<td>${survey.name}</td>
+										<td>${survey.totalResponses}</td>
+										<td>
+											<button data-toggle="dropdown"
+												class="btn btn-primary dropdown-toggle">
+												Action <span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu">
+												<li><a href="#">Responses</a></li>
+												<li><a href="#">Sync Now</a></li>
+												<li><a href="#">Report</a></li>
+											</ul>
+											</div>
+										</td>
 
-								<tr>
-
-									<td>1</td>
-
-
-									<td>${SID}</td>
-
-
-									<td>${SN}</td>
+									</tr>
+								</c:forEach>
 
 
 
-									<td>${RN}</td>
-
-
-									<td>
-										<button data-toggle="dropdown"
-											class="btn btn-primary dropdown-toggle">
-											Action <span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Responses</a></li>
-											<li><a href="#">Sync Now</a></li>
-											<li><a href="#">Report</a></li>
-										</ul>
-										</div>
-									</td>
-
-								</tr>
 
 
 

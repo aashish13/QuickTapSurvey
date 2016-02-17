@@ -3,6 +3,8 @@
  */
 package com.quicktap.data.dao;
 
+import java.util.ArrayList;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -25,5 +27,14 @@ public class SurveyDao implements ParentDao{
 		Session session=sessionFactory.getCurrentSession();
 		session.save(survey);
 		return survey.getId();
+	}
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	public ArrayList getSurveyByUsername(String string) {
+		Session session=sessionFactory.getCurrentSession();
+		return (ArrayList) session.createQuery("From Surveys").list();
 	}
 }
