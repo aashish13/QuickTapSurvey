@@ -1,5 +1,5 @@
 package com.quicktap.data.entity;
-// Generated Feb 16, 2016 9:48:34 PM by Hibernate Tools 4.3.1.Final
+// Generated Feb 17, 2016 2:34:22 AM by Hibernate Tools 4.3.1.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

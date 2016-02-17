@@ -3,13 +3,25 @@
  */
 package com.quicktap.service;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.quicktap.data.dao.SurveyDao;
+import com.quicktap.data.entity.Surveys;
 
 /**
  * @author Aashish
  *
  */
 @Service
+@Transactional
 public class SurveyService{
-
+	@Autowired
+	private SurveyDao surveyDao;
+	
+	public int add(Surveys survey){
+		return surveyDao.add(survey);
+	}
 }

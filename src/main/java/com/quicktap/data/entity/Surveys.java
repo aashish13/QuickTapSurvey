@@ -1,5 +1,5 @@
 package com.quicktap.data.entity;
-// Generated Feb 16, 2016 9:48:34 PM by Hibernate Tools 4.3.1.Final
+// Generated Feb 17, 2016 2:34:22 AM by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,7 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "surveys", catalog = "mydb")
 public class Surveys implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private long surveyId;
 	private String name;
 	private int totalResponses;
@@ -31,17 +33,15 @@ public class Surveys implements java.io.Serializable {
 	public Surveys() {
 	}
 
-	public Surveys(int id, long surveyId, String name, int totalResponses, Date lastSynchTime) {
-		this.id = id;
+	public Surveys(long surveyId, String name, int totalResponses, Date lastSynchTime) {
 		this.surveyId = surveyId;
 		this.name = name;
 		this.totalResponses = totalResponses;
 		this.lastSynchTime = lastSynchTime;
 	}
 
-	public Surveys(int id, long surveyId, String name, int totalResponses, Date lastSynchTime,
+	public Surveys(long surveyId, String name, int totalResponses, Date lastSynchTime,
 			Set<SurveyUserLinks> surveyUserLinkses, Set<Questions> questionses) {
-		this.id = id;
 		this.surveyId = surveyId;
 		this.name = name;
 		this.totalResponses = totalResponses;
@@ -51,13 +51,14 @@ public class Surveys implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id", unique = true, nullable = false)
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

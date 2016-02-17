@@ -1,11 +1,13 @@
 package com.quicktap.data.entity;
-// Generated Feb 16, 2016 9:48:34 PM by Hibernate Tools 4.3.1.Final
+// Generated Feb 17, 2016 2:34:22 AM by Hibernate Tools 4.3.1.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "responses", catalog = "mydb")
 public class Responses implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private Questions questions;
 	private Users users;
 	private String dateCollected;
@@ -29,17 +31,15 @@ public class Responses implements java.io.Serializable {
 	public Responses() {
 	}
 
-	public Responses(int id, Questions questions, Users users, String dateCollected, String dateSent) {
-		this.id = id;
+	public Responses(Questions questions, Users users, String dateCollected, String dateSent) {
 		this.questions = questions;
 		this.users = users;
 		this.dateCollected = dateCollected;
 		this.dateSent = dateSent;
 	}
 
-	public Responses(int id, Questions questions, Users users, String dateCollected, String dateSent,
+	public Responses(Questions questions, Users users, String dateCollected, String dateSent,
 			Set<ResponseValues> responseValueses) {
-		this.id = id;
 		this.questions = questions;
 		this.users = users;
 		this.dateCollected = dateCollected;
@@ -48,13 +48,14 @@ public class Responses implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id", unique = true, nullable = false)
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
