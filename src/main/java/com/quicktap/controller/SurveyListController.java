@@ -39,7 +39,7 @@ public class SurveyListController {
 		synchService.loginQuickTap("esha");
 		//this method will get all the list of surveys
 		//TODO: return type of this method should be generic to surveylist response
-		synchService.synchAllSurveys();
+		synchService.synchSurveys("esha");
 		return "redirect:survey";
 	}
 }

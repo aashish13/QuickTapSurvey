@@ -31,7 +31,7 @@ public class SyncService {
 		return false;
 	}
 	
-	public ArrayList synchAllSurveys(){
+	public ArrayList synchSurveys(String username){
 		//TODO directly using the method from main need to implement with jersey
 		ApiSurveyDO[] surveys=Main.getSurveyList();
 		
