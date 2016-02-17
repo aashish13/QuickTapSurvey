@@ -17,17 +17,12 @@ import org.apache.log4j.Logger;
 import com.quicktap.integration.apihelper.connect.ConnectionManager;
 import com.quicktap.integration.apihelper.connect.ResultCode;
 import com.quicktap.integration.apihelper.data.ApiSurveyDO;
+import com.quicktap.integration.apihelper.data.ApiSurveyElementDO;
+import com.quicktap.integration.apihelper.data.ApiSurveyElementResponseDO;
 import com.quicktap.integration.apihelper.data.ApiSurveyResponseDO;
 import com.quicktap.integration.apihelper.response.GetSurveyDataResponse;
 import com.quicktap.integration.apihelper.response.ListSurveysResponse;
 import com.quicktap.integration.apihelper.response.LoginResponse;
-import com.quicktap.integration.apihelper.data.ApiSurveyElementDO;
-import com.quicktap.integration.apihelper.data.ApiSurveyElementResponseDO;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author tishanmills
@@ -37,8 +32,8 @@ public class Main {
 
 	final static String endpointUrl = "https://www.quicktapsurvey.com/api-v1/";
 	static Logger log;
-	
-	public static boolean loginQT(String u,String p,String a){
+
+	public static boolean loginQT(String u, String p, String a) {
 		String username = "esha1";
 		String password = "Eshasherry1";
 		String apiKey = "CN0JRMCZSQMHYGOSA42K20XNGZP4U54I";
@@ -51,16 +46,15 @@ public class Main {
 		if (loginResponse.getResultCode() == ResultCode.LOGIN_SUCCESS) {
 			return true;
 		}
-		
+
 		return false;
-		
-		
+
 	}
 
-	public static ApiSurveyDO[] getSurveyList(){
-		String username = "esha1";
-		String password = "Eshasherry1";
-		String apiKey = "CN0JRMCZSQMHYGOSA42K20XNGZP4U54I";
+	public static ApiSurveyDO[] getSurveyList() {
+		String username = "aashish";
+		String password = "Quicktap123";
+		String apiKey = "LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06";
 
 		ConnectionManager conn = new ConnectionManager(endpointUrl);
 		LoginResponse loginResponse = conn.login(username, password, apiKey);
@@ -72,15 +66,14 @@ public class Main {
 			if (listSurveysResponse.getResultCode() == ResultCode.LIST_SURVEYS_SUCCESS) {
 
 				ApiSurveyDO[] surveyList = listSurveysResponse.getSurveyList();
-				return surveyList; 
-				}
+				return surveyList;
+			}
 		}
 		return null;
 	}
-	
+
 	public static void main(String[] args) {
-              
-          
+
 		log = Logger.getLogger(Main.class);
 
 		String username = "esha1";
@@ -103,45 +96,37 @@ public class Main {
 					int surveyId = surveyList[0].getSurveyId();
 					log.debug("Fetching data for survey with ID: " + surveyList[0].getSurveyId() + ", name: "
 							+ surveyList[0].getSurveyName());
-					GetSurveyDataResponse getSurveyResponse = conn.getSurveyResponses(surveyId, null, null,
-							pageNumber, pageSize);
-                                        
-                                       
-                                        
-                                       //GETTING QUESTIONS 
-                                         ApiSurveyElementDO[] questions=getSurveyResponse.getQuestions();
-                                       
-                                         
-                                         if (getSurveyResponse.getResultCode() == ResultCode.GET_SURVEY_RESPONSES_SUCCESS) {
+					GetSurveyDataResponse getSurveyResponse = conn.getSurveyResponses(surveyId, null, null, pageNumber,
+							pageSize);
+					// GETTING QUESTIONS
+					ApiSurveyElementDO[] questions = getSurveyResponse.getQuestions();
+
+					if (getSurveyResponse.getResultCode() == ResultCode.GET_SURVEY_RESPONSES_SUCCESS) {
 						ApiSurveyResponseDO[] responses = getSurveyResponse.getResponses();
-                                                ApiSurveyElementResponseDO[] r;
+						ApiSurveyElementResponseDO[] r;
 						for (ApiSurveyResponseDO res : responses) {
 							log.debug("Response username: " + res.getUsername());
-                                                        r=res.getResponseValues();
-                                                        
-                                                       
-                                                    for (ApiSurveyElementResponseDO s : r) {
-                                                  System.out.println(s.getResponseValue());
-                                                  
-                                                }
-                                                // resultDocument.put("questions", responseDetail);
-                                                 
+							r = res.getResponseValues();
 
-			
-			System.out.println("Done RESPONSES");
-                                                }
+							for (ApiSurveyElementResponseDO s : r) {
+								System.out.println(s.getResponseValue());
+
+							}
+							// resultDocument.put("questions", responseDetail);
+
+							System.out.println("Done RESPONSES");
+						}
 					} else {
-						log.debug("Getting survey responses failed. Code:"
-								+ getSurveyResponse.getResultCode().getId() + ", "
-								+ getSurveyResponse.getResultCode().getDescription());
+						log.debug("Getting survey responses failed. Code:" + getSurveyResponse.getResultCode().getId()
+								+ ", " + getSurveyResponse.getResultCode().getDescription());
 					}
 				} else {
 					log.debug("Survey list empty.");
 				}
 
 			} else {
-				log.debug("ListSurveys failed with result code: " + listSurveysResponse.getResultCode().getId()
-						+ ", " + listSurveysResponse.getResultCode().getDescription());
+				log.debug("ListSurveys failed with result code: " + listSurveysResponse.getResultCode().getId() + ", "
+						+ listSurveysResponse.getResultCode().getDescription());
 			}
 
 		} else {

@@ -15,12 +15,8 @@
       </footer>
       <!--footer end-->
   </section>
-
-
-
-
-<script src="${pageContext.request.contextPath}/js/jquery.js" type="text/javascript"></script> 
-<script src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js" type="text/javascript"></script> 
+ 
+<script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript"></script> 
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script> 
 <script src="${pageContext.request.contextPath}/js/common-scripts.js" type="text/javascript"></script> 
     

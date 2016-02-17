@@ -8,7 +8,7 @@
 <link type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" />
 <link type="text/css" href="${pageContext.request.contextPath}/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link type="text/css" href="${pageContext.request.contextPath}/css/admin/style.css" rel="stylesheet" />
-<link type="text/css" href="${pageContext.request.contextPath}/css/adminl/style-responsive.css" rel="stylesheet" />
+<link type="text/css" href="${pageContext.request.contextPath}/css/admin/style-responsive.css" rel="stylesheet" />
 
 </head>
 <body>

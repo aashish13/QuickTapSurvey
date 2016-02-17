@@ -1,5 +1,5 @@
 package com.quicktap.data.entity;
-// Generated Feb 17, 2016 2:34:22 AM by Hibernate Tools 4.3.1.Final
+// Generated Feb 17, 2016 1:35:46 PM by Hibernate Tools 4.3.1.Final
 
 import java.util.HashSet;
 import java.util.Set;
