@@ -153,6 +153,6 @@
 				</div>
 			</div>
 		</div>	</div>
-	<%@ include file="/WEB-INF/views/footer.jsp"%>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

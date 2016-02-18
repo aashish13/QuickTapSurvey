@@ -2,18 +2,11 @@
 <%@ page session="false"%>
 <html>
 <head>
-
 <title>Survey List</title>
 </head>
-
-
 <body>
-
 	<%@ include file="/WEB-INF/views/header.jsp"%>
-
-	<!--main content start-->
 	<section id="main-content">
-
 		<section class="wrapper">
 			<h3>
 				<i class="fa fa-angle-right"></i> Active Surveys
@@ -23,12 +16,8 @@
 					<i class="fa fa-cog"></i> Sync
 				</button>
 			</form>
-
 			<div class="row">
 				<div class="col-md-12 mt">
-
-
-
 					<div class="content-panel">
 						<table class="table table-hover">
 							<h4>
@@ -42,7 +31,6 @@
 									<th>Survey Name</th>
 									<th>Responses</th>
 									<th>Actions</th>
-
 								</tr>
 							</thead>
 							<tbody>
@@ -53,20 +41,18 @@
 										<td>${survey.name}</td>
 										<td>${survey.totalResponses}</td>
 										<td>
-
 											<div class="dropdown">
 												<button data-toggle="dropdown"
 													class="btn btn-primary dropdown-toggle">
 													Action <span class="caret"></span>
 												</button>
 												<ul class="dropdown-menu">
-													<li><a href="#">Responses</a></li>
+													<li><a href="response">Responses</a></li>
 													<li><a href="#">Sync Now</a></li>
-													<li><a href="#">Report</a></li>
+													<li><a href="charts">Report</a></li>
 												</ul>
 											</div>
 										</td>
-
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -77,6 +63,6 @@
 			</div>
 			<!-- row -->
 		</section>
-		<%@ include file="/WEB-INF/views/footer2.jsp"%>
+		<jsp:include page="footer.jsp" />
 </body>
 </html>

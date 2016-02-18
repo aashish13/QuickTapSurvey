@@ -36,10 +36,9 @@ public class MainController {
 		if(result.hasErrors())
 			return "login";
 		else{
-			
+			//TODO Ravinder - check the username in users table and add the details to 
+			//session if unsuccessful show an error message and send the user back to login page
 			return "redirect:survey";
-		}
-				
+		}		
 	}
-	
 }

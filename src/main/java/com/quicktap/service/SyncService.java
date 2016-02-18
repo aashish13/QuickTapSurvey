@@ -31,19 +31,8 @@ public class SyncService {
 		return false;
 	}
 	
-	public ArrayList synchSurveys(String username){
+	public void synchSurveys(String username){
 		//TODO directly using the method from main need to implement with jersey
-		ApiSurveyDO[] surveys=Main.getSurveyList();
-		
-		for (ApiSurveyDO s : surveys) {
-			Surveys survey=new Surveys();
-			survey.setSurveyId(s.getSurveyId());
-			survey.setName(s.getSurveyName());
-			survey.setTotalResponses(s.getTotalResponses());
-			survey.setLastSynchTime(Utils.getTime());
-			if(surveyService.getById(s.getSurveyId())==null)
-				surveyService.add(survey);
-		}
-		return null;
+		surveyService.synchSurveys(username);
 	}
 }
