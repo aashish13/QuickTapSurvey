@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.quicktap.service.SurveyService;
-import com.quicktap.service.SyncService;
 
 /**
  * @author Aashish
