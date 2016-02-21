@@ -57,9 +57,9 @@ public class Main {
 
 		log = Logger.getLogger(Main.class);
 
-		String username = "esha1";
-		String password = "Eshasherry1";
-		String apiKey = "CN0JRMCZSQMHYGOSA42K20XNGZP4U54I";
+		String username = "aashish";
+		String password = "Quicktap123";
+		String apiKey = "LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06";
 
 		ConnectionManager conn = new ConnectionManager(endpointUrl);
 
@@ -67,7 +67,7 @@ public class Main {
 		LoginResponse loginResponse = conn.login(username, password, apiKey);
 		if (loginResponse.getResultCode() == ResultCode.LOGIN_SUCCESS) {
 
-			int pageSize = 1;
+			int pageSize = 50;
 			int pageNumber = 1;
 			ListSurveysResponse listSurveysResponse = conn.listSurveys(pageSize, pageNumber);
 			if (listSurveysResponse.getResultCode() == ResultCode.LIST_SURVEYS_SUCCESS) {
@@ -80,8 +80,13 @@ public class Main {
 					GetSurveyDataResponse getSurveyResponse = conn.getSurveyResponses(surveyId, null, null, pageNumber,
 							pageSize);
 					// GETTING QUESTIONS
+					
+					//Aashish : Added to pring all the questions
 					ApiSurveyElementDO[] questions = getSurveyResponse.getQuestions();
-
+					for (ApiSurveyElementDO question : questions) {
+						System.out.println(question.getQuestionNumber()+" -- "+question.getQuestionTitle());
+					}
+					//Aashish : Added to pring all the questions
 					if (getSurveyResponse.getResultCode() == ResultCode.GET_SURVEY_RESPONSES_SUCCESS) {
 						ApiSurveyResponseDO[] responses = getSurveyResponse.getResponses();
 						ApiSurveyElementResponseDO[] r;

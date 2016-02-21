@@ -1,13 +1,15 @@
 package com.quicktap.data.entity;
 // Generated Feb 20, 2016 7:10:56 PM by Hibernate Tools 4.3.1.Final
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -90,6 +92,16 @@ public class Questions implements java.io.Serializable {
 
 	public void setResponseValueses(Set<ResponseValues> responseValueses) {
 		this.responseValueses = responseValueses;
+	}
+	
+	// adding equals method so that we can use this method 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		Questions q=(Questions)obj;
+		return this.getQuestionNo()==q.getQuestionNo();
 	}
 
 }

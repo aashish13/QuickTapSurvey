@@ -78,18 +78,18 @@
 				<div class="login-form">
 					<div class="form-group">
 						<form:form method="post" action="login" modelAttribute="login">
-
+							<form:errors path="username" style="color:red" />
+							<br />
+							<br />
 							<form:input type="text" class="form-control login-field"
 								placeholder="Enter your username" path="username" />
-
-							<form:errors path="username" style="color:red" />
-
+							<br />
 							<button type="submit" class="btn btn-primary btn-lg btn-block">Log
 								in</button>
 
 							<a class="login-link"
-								href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-login&rt=fbt">
-								Sign Up</a>
+								href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-login&rt=fbt"
+								target="_blank"> Sign Up</a>
 
 						</form:form>
 
