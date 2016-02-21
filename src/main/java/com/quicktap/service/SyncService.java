@@ -5,8 +5,10 @@ package com.quicktap.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.support.FormatterPropertyEditorAdapter;
 import org.springframework.stereotype.Component;
 
 import com.quicktap.Utils;
@@ -29,20 +31,8 @@ public class SyncService {
 		return false;
 	}
 	
-	public ArrayList synchAllSurveys(){
+	public void synchSurveys(String username){
 		//TODO directly using the method from main need to implement with jersey
-		ApiSurveyDO[] surveys=Main.getSurveyList();
-		
-		for (int i = 0; i < surveys.length; i++) {
-			Surveys survey=new Surveys();
-			survey.setSurveyId(surveys[i].getSurveyId());
-			survey.setName(surveys[i].getSurveyName());
-			survey.setTotalResponses(surveys[i].getTotalResponses());
-			survey.setLastSynchTime(Utils.getTime());
-			if(surveyService.getById(surveys[i].getSurveyId())==null)
-				surveyService.add(survey);
-		}
-		
-		return null;
+		surveyService.synchSurveys(username);
 	}
 }

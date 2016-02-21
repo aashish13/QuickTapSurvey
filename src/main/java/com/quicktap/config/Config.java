@@ -1,3 +1,4 @@
+
 /**
  * 
  */
@@ -54,9 +55,9 @@ public class Config extends WebMvcConfigurerAdapter {
 		// apache commons
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/mydb");
+		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/quicktap");
 		dataSource.setUsername("root");
-		dataSource.setPassword("admin");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 
