@@ -11,7 +11,7 @@
 			<h3>
 				<i class="fa fa-angle-right"></i> Active Surveys
 			</h3>
-			<form method="get" action="sync">
+			<form method="get" action="syncsurvey">
 				<button type="submit" class="btn btn-round btn-primary">
 					<i class="fa fa-cog"></i> Sync
 				</button>
