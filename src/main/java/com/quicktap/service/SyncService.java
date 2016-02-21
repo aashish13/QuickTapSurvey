@@ -21,7 +21,6 @@ public class SyncService {
 	}
 	
 	public void synchSurveys(String username){
-		//TODO directly using the method from main need to implement with jersey
 		surveyService.synchSurveys(username);
 	}
 

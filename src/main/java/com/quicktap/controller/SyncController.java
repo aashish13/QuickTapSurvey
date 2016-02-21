@@ -24,12 +24,12 @@ public class SyncController {
 		//need to move this code to login controller method/class
 		//synchService.loginQuickTap("aashish");
 		//this method will get all the list of surveys
-		//TODO: return type of this method should be generic to surveylist response
 		synchService.synchSurveys("aashish");
 		return "redirect:synchresponses";
 	}
 	@RequestMapping(value="synchresponses")
-	public String synchResponsesFromSurver(){
+	public String synchResponsesFromServer(){
+		//TODO : Need to add functionality to sync a single survey or all surveys 
 		//we will get survey_id from the request 
 		int survey_id=2;
 		//we will get username from session

@@ -24,7 +24,6 @@ public class UserService {
 	 * @return
 	 */
 	public Users getUserByUserName(String username) {
-		// TODO Auto-generated method stub
 		return userDao.getUserByUserName(username);
 	}
 

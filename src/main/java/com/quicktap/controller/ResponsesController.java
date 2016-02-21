@@ -24,8 +24,8 @@ public class ResponsesController {
 	public ModelAndView showResponsesPage(){
 		//example for Ashwini
 		String username="";
-		int survey_id=0;
-		Surveys survey=surveyService.getById(survey_id);
+		int surveyId=0;
+		Surveys survey=surveyService.getBySurveyId(surveyId);
 		survey.getQuestionses();
 		//Ends
 		return new ModelAndView("response");

@@ -25,7 +25,6 @@ public class WebAppInitiaalizer implements WebApplicationInitializer {
 	 */
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
-		// TODO Auto-generated method stub
 		WebApplicationContext context=getContext();
 		servletContext.addListener(new ContextLoaderListener(context));
 		ServletRegistration.Dynamic dispatcher=
@@ -36,7 +35,6 @@ public class WebAppInitiaalizer implements WebApplicationInitializer {
 	}
 
 	private AnnotationConfigWebApplicationContext getContext() {
-		// TODO Auto-generated method stub
 		AnnotationConfigWebApplicationContext con=new AnnotationConfigWebApplicationContext();
 		con.register(Config.class);
 		return con;

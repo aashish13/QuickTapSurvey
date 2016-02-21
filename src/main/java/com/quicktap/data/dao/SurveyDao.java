@@ -24,7 +24,6 @@ public class SurveyDao implements ParentDao{
 	
 	
 	public void save(Surveys survey) {
-		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().saveOrUpdate(survey);
 	}
 	
