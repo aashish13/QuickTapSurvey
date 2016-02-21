@@ -19,7 +19,7 @@ public class SyncController {
 	@Autowired
 	private SyncService synchService;
 	
-	@RequestMapping(value="sync")
+	@RequestMapping(value="syncsurvey")
 	public String synchFromServer(){
 		//need to move this code to login controller method/class
 		synchService.loginQuickTap("aashish");
