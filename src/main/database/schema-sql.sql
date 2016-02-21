@@ -103,9 +103,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `quicktap`.`survey_user_link`
+-- Table `quicktap`.`survey_user_links`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `quicktap`.`survey_user_link` (
+CREATE TABLE IF NOT EXISTS `quicktap`.`survey_user_links` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `users_id` INT NOT NULL,
   `surveys_id` INT NOT NULL,
