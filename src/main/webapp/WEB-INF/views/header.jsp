@@ -48,16 +48,12 @@
 			<li class="mt"><a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTapSurvey/survey"> <i
+			<li class="sub-menu"><a href="/QuickTap/survey"> <i
 					class="fa fa-desktop"></i> <span>Surveys</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTapSurvey/response"> <i
+			<li class="sub-menu"><a href="/QuickTap/response"> <i
 					class=" fa fa-bar-chart-o"></i>Responses
-			</a></li>
-			
-			<li class="sub-menu"><a href="/QuickTapSurvey/charts"> <i
-					class=" fa fa-bar-chart-o"></i>Reports
 			</a></li>
 		</ul>
 		<!-- sidebar menu end-->

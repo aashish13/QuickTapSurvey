@@ -130,7 +130,7 @@ public class ConnectionManager {
 	 * @param pageNumber
 	 * @param pageSize
 	 */
-	public GetSurveyDataResponse getSurveyResponses(int surveyId, String fromDate, String toDate, Integer pageNumber,
+	public GetSurveyDataResponse getSurveyResponses(long surveyId, String fromDate, String toDate, Integer pageNumber,
 			Integer pageSize) {
 
 		// construct getSurveysData request object

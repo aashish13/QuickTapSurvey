@@ -28,6 +28,4 @@ public class SurveyListController {
 		model.addAttribute("surveys",listSurvey);
 		return "survey";
 	}
-	
-	
 }

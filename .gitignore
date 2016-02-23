@@ -2,3 +2,6 @@
 .idea
 .settings
 target
+src/main/java/com/quicktap/config/Config.java
+
+*.class

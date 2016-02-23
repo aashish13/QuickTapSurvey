@@ -5,15 +5,12 @@ package com.quicktap.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * @author Aashish
  *
  */
 public class Login {
-	@NotEmpty
+	@NotEmpty(message="Username can not be empty")
 	String username;
 
 	public String getUsername() {

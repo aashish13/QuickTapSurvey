@@ -27,7 +27,7 @@ public class SurveyUserLinkDao implements ParentDao{
 	 * @param surveyUserLink
 	 */
 	public void save(SurveyUserLinks surveyUserLink) {
-		// TODO Auto-generated method stub
+
 		sessionFactory.getCurrentSession().saveOrUpdate(surveyUserLink);
 	}
 	

@@ -22,7 +22,6 @@ public class SurveyUserLinkService{
 	 * @param surveyUserLink
 	 */
 	public void save(SurveyUserLinks surveyUserLink) {
-		// TODO Auto-generated method stub
 		surveyUserLinkDao.save(surveyUserLink);
 		
 	}
