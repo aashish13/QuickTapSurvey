@@ -47,7 +47,11 @@
 													Action <span class="caret"></span>
 												</button>
 												<ul class="dropdown-menu">
+
 													<li><a href="response?id=${survey.id}">Responses</a></li>
+
+													<li><a href="response">Responses</a></li>
+
 													<li><a href="#">Sync Now</a></li>
 													<li><a href="charts">Report</a></li>
 												</ul>

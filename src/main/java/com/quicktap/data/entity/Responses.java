@@ -97,8 +97,10 @@ public class Responses implements java.io.Serializable {
 		this.userName = userName;
 	}
 
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "responses")
 	@OrderBy("questions")
+
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
 	}

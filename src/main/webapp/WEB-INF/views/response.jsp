@@ -21,6 +21,7 @@
 							</h4>
 							<thead>
 								<tr>
+
 								<th></th>
 									<c:forEach var="question" items="${questions}">
 										<th>${question.title}</th>
@@ -41,6 +42,44 @@
 								</c:forEach>
 							</tr>
 							</c:forEach>
+
+									<th>#</th>
+									<th>Question 1 </th>
+									<th>Question 2</th>
+									<th>Question 3</th>
+									<th>Question 4</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+										<td>Answer</td>
+										<td>Answer</td>
+										<td>Answer</td>
+										<td>Answer</td>
+										<td>Answer</td>
+									</tr>
+								<c:forEach var="survey" items="${surveys}">
+									<tr>
+										<td>${survey.id}</td>
+										<td>${survey.surveyId}</td>
+										<td>${survey.name}</td>
+										<td>${survey.totalResponses}</td>
+										<td>
+											<div class="dropdown">
+												<button data-toggle="dropdown"
+													class="btn btn-primary dropdown-toggle">
+													Action <span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a href="response">Responses</a></li>
+													<li><a href="#">Sync Now</a></li>
+													<li><a href="#">Report</a></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</c:forEach>
+
 							</tbody>
 						</table>
 					</div>
