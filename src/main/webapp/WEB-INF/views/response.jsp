@@ -43,21 +43,10 @@
 							</tr>
 							</c:forEach>
 
-									<th>#</th>
-									<th>Question 1 </th>
-									<th>Question 2</th>
-									<th>Question 3</th>
-									<th>Question 4</th>
-								</tr>
+									
 							</thead>
 							<tbody>
-							<tr>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-									</tr>
+							
 								<c:forEach var="survey" items="${surveys}">
 									<tr>
 										<td>${survey.id}</td>
@@ -95,7 +84,7 @@
 <script src="${pageContext.request.contextPath}/js/chartjs-conf.js" type="text/javascript"></script> 
  
   <script>
-      //custom select box
+      
 
       $(function(){
           $('select.styled').customSelect();
