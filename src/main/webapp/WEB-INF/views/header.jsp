@@ -26,11 +26,11 @@
 		<div class="fa fa-bars tooltips" data-placement="right"
 			data-original-title="Toggle Navigation"></div>
 	</div>
-	<!--logo start--> <a href="/QuickTap/" class="logo"><b>Capstone</b></a>
+	<!--logo start--> <a href="/QuickTapSurvey/" class="logo"><b>Capstone</b></a>
 	<!--logo end-->
 	<div class="top-menu">
 		<ul class="nav pull-right top-menu">
-			<li><a class="logout" href="/QuickTap/login">Logout</a></li>
+			<li><a class="logout" href="/QuickTapSurvey/login">Logout</a></li>
 		</ul>
 	</div>
 	</header> <!--header end--> <!--sidebar start--> <aside>
@@ -48,13 +48,13 @@
 			<li class="mt"><a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTap/survey"> <i
+			<li class="sub-menu"><a href="/QuickTapSurvey/survey"> <i
 					class="fa fa-desktop"></i> <span>Surveys</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTap/response"> <i
+			<!-- <li class="sub-menu"><a href="/QuickTapSurvey/response"> <i
 					class=" fa fa-bar-chart-o"></i>Responses
-			</a></li>
+			</a></li> -->
 		</ul>
 		<!-- sidebar menu end-->
 	</div>
