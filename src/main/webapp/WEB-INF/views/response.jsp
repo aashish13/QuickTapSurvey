@@ -36,28 +36,17 @@
 							<tbody>
 							<c:forEach var="response" items="${responses}">
 							<tr>
-							<td> ${response.userName}</td>
+							<td> ${response.userName} <br/> ${response.dateCollected}</td>
 								<c:forEach var="rv" items="${response.responseValueses}">
 													<td>${rv.value}</td>			
 								</c:forEach>
 							</tr>
 							</c:forEach>
 
-									<th>#</th>
-									<th>Question 1 </th>
-									<th>Question 2</th>
-									<th>Question 3</th>
-									<th>Question 4</th>
-								</tr>
+									
 							</thead>
 							<tbody>
-							<tr>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-										<td>Answer</td>
-									</tr>
+							
 								<c:forEach var="survey" items="${surveys}">
 									<tr>
 										<td>${survey.id}</td>
@@ -65,17 +54,7 @@
 										<td>${survey.name}</td>
 										<td>${survey.totalResponses}</td>
 										<td>
-											<div class="dropdown">
-												<button data-toggle="dropdown"
-													class="btn btn-primary dropdown-toggle">
-													Action <span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu">
-													<li><a href="response">Responses</a></li>
-													<li><a href="#">Sync Now</a></li>
-													<li><a href="#">Report</a></li>
-												</ul>
-											</div>
+											
 										</td>
 									</tr>
 								</c:forEach>
@@ -91,11 +70,11 @@
       </section><!-- /MAIN CONTENT -->
 
 <jsp:include page="footer.jsp" />
-<script src="${pageContext.request.contextPath}/js/Chart.js" type="text/javascript"></script> 
-<script src="${pageContext.request.contextPath}/js/chartjs-conf.js" type="text/javascript"></script> 
+<%-- <script src="${pageContext.request.contextPath}/js/Chart.js" type="text/javascript"></script> 
+<script src="${pageContext.request.contextPath}/js/chartjs-conf.js" type="text/javascript"></script> --%> 
  
   <script>
-      //custom select box
+      
 
       $(function(){
           $('select.styled').customSelect();
