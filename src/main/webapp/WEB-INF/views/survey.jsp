@@ -49,11 +49,8 @@
 												<ul class="dropdown-menu">
 
 													<li><a href="response?id=${survey.id}">Responses</a></li>
-
-													<li><a href="response">Responses</a></li>
-
-													<li><a href="#">Sync Now</a></li>
-													<li><a href="charts">Report</a></li>
+													<li><a href="synchresponse/one/${survey.id}">Sync Now</a></li>
+													<li><a href="charts/${survey.id}">Report</a></li>
 												</ul>
 											</div>
 										</td>

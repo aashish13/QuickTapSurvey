@@ -13,5 +13,6 @@
 		type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/common-scripts.js"
 		type="text/javascript"></script>
+		
 </body>
 </html>

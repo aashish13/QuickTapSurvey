@@ -9,28 +9,66 @@
 	<section id="main-content">
 		<section class="wrapper">
 			<h3>
-				<i class="fa fa-angle-right"></i> Responses
+				<i class="fa fa-angle-right"></i> Reports
 			</h3>
 			<!-- page start-->
+			<a href="${pageContext.request.contextPath}/visualize/ColumnChart/${surveyId}" >Column Chart</a><br/>
+			<a href="${pageContext.request.contextPath}/visualize/ComboChart/${surveyId}" >Combo Chart</a><br/>
+			<a href="${pageContext.request.contextPath}/visualize/SteppedAreaChart/${surveyId}" >Stepped Area Chart</a><br/>
+			<a href="${pageContext.request.contextPath}/visualize/AreaChart/${surveyId}" >Area Chart</a><br/>
+			<a href="${pageContext.request.contextPath}/visualize/Histogram/${surveyId}" >Histogram</a><br/>
+			
 			<div class="tab-pane" id="chartjs">
 				<div class="row mt">
 					<div class="col-lg-6">
 						<div class="content-panel">
-							<h4>
-								<i class="fa fa-angle-right"></i> Doughnut
-							</h4>
-							<div class="panel-body text-center">
-								<canvas id="doughnut" height="300" width="400"></canvas>
-							</div>
+							<a
+								href="${pageContext.request.contextPath}/visualize/PieChart/${surveyId}">
+								<h4>
+									<i class="fa fa-angle-right"></i> Pie
+								</h4>
+								<div class="panel-body text-center">
+									<canvas id="pie" height="300" width="400"></canvas>
+								</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="content-panel">
 							<h4>
-								<i class="fa fa-angle-right"></i> Line
+								<i class="fa fa-angle-right"></i> Line <a
+									href="${pageContext.request.contextPath}/visualize/LineChart/${surveyId}">
 							</h4>
 							<div class="panel-body text-center">
 								<canvas id="line" height="300" width="400"></canvas>
+							</div>
+							</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="row mt">
+					<div class="col-lg-6">
+						<div class="content-panel">
+							<h4>
+								<i class="fa fa-angle-right"></i> Bar 
+								<a href="${pageContext.request.contextPath}/visualize/BarChart/${surveyId}">
+							</h4>
+							<div class="panel-body text-center">
+								<canvas id="bar" height="300" width="400"></canvas>
+							</div>
+							</a>
+
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="content-panel">
+							<h4>
+								<i class="fa fa-angle-right"></i> Polar Area
+							</h4>
+							<div class="panel-body text-center">
+								<canvas id="polarArea" height="300" width="400"></canvas>
 							</div>
 						</div>
 					</div>
@@ -49,32 +87,10 @@
 					<div class="col-lg-6">
 						<div class="content-panel">
 							<h4>
-								<i class="fa fa-angle-right"></i> Polar Area
+								<i class="fa fa-angle-right"></i> Doughnut
 							</h4>
 							<div class="panel-body text-center">
-								<canvas id="polarArea" height="300" width="400"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row mt">
-					<div class="col-lg-6">
-						<div class="content-panel">
-							<h4>
-								<i class="fa fa-angle-right"></i> Bar
-							</h4>
-							<div class="panel-body text-center">
-								<canvas id="bar" height="300" width="400"></canvas>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="content-panel">
-							<h4>
-								<i class="fa fa-angle-right"></i> Pie
-							</h4>
-							<div class="panel-body text-center">
-								<canvas id="pie" height="300" width="400"></canvas>
+								<canvas id="doughnut" height="300" width="400"></canvas>
 							</div>
 						</div>
 					</div>

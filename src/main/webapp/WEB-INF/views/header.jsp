@@ -17,7 +17,9 @@
 <link type="text/css"
 	href="${pageContext.request.contextPath}/css/admin/style-responsive.css"
 	rel="stylesheet" />
-
+<script type="text/javascript">
+var contextPath='${pageContext.request.contextPath}';
+</script>
 </head>
 <body>
 
