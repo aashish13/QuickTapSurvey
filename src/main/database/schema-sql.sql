@@ -124,9 +124,122 @@ CREATE TABLE IF NOT EXISTS `quicktap`.`survey_user_links` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `quicktap`.`charts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`charts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quicktap`.`question_types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`question_types` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quicktap`.`charts_questions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`charts_questions` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `charts_id` INT NOT NULL,
+  `questions_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_charts_questions_charts1_idx` (`charts_id` ASC),
+  INDEX `fk_charts_questions_questions1_idx` (`questions_id` ASC),
+  CONSTRAINT `fk_charts_questions_charts1`
+    FOREIGN KEY (`charts_id`)
+    REFERENCES `quicktap`.`charts` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_charts_questions_questions1`
+    FOREIGN KEY (`questions_id`)
+    REFERENCES `quicktap`.`question_types` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 
 insert into users(username,password,api_key)
 values('aashish','Quicktap123','LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06');
+
+insert into question_types(type)
+values
+('Canadian Postal Code'),
+('Currency Amount'),
+('Date Picker'),
+('Email Address'),
+('Gender(Male/Female)'),
+('Image Display(Splash Screen)'),
+('List Picker'),
+('Map Point'),
+('Matrix - Likert Scale'),
+('MCQ - Image Many Answer')
+;
+INSERT INTO `charts` (`id`,`name`) VALUES (1,'PieChart');
+INSERT INTO `charts` (`id`,`name`) VALUES (2,'BarChart');
+INSERT INTO `charts` (`id`,`name`) VALUES (3,'Linechart');
+insert into charts(name)
+values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
+-- adding linking for gender
+insert into charts_questions(charts_id,questions_id)
+values(1,5);
+insert into charts_questions(charts_id,questions_id)
+values(2,5);
+insert into charts_questions(charts_id,questions_id)
+values(3,5);
+insert into charts_questions(charts_id,questions_id)
+values(4,5);
+insert into charts_questions(charts_id,questions_id)
+values(5,5);
+insert into charts_questions(charts_id,questions_id)
+values(6,5);
+insert into charts_questions(charts_id,questions_id)
+values(7,5);
+insert into charts_questions(charts_id,questions_id)
+values(8,5);
+-- Adding linking for List Picker
+insert into charts_questions(charts_id,questions_id)
+values(1,7);
+insert into charts_questions(charts_id,questions_id)
+values(2,7);
+insert into charts_questions(charts_id,questions_id)
+values(3,7);
+insert into charts_questions(charts_id,questions_id)
+values(4,7);
+insert into charts_questions(charts_id,questions_id)
+values(5,7);
+insert into charts_questions(charts_id,questions_id)
+values(6,7);
+insert into charts_questions(charts_id,questions_id)
+values(7,7);
+insert into charts_questions(charts_id,questions_id)
+values(8,7);
+-- MCQ Single Answer
+insert into charts_questions(charts_id,questions_id)
+values(1,14);
+insert into charts_questions(charts_id,questions_id)
+values(2,14);
+insert into charts_questions(charts_id,questions_id)
+values(3,14);
+insert into charts_questions(charts_id,questions_id)
+values(4,14);
+insert into charts_questions(charts_id,questions_id)
+values(5,14);
+insert into charts_questions(charts_id,questions_id)
+values(6,14);
+insert into charts_questions(charts_id,questions_id)
+values(7,14);
+insert into charts_questions(charts_id,questions_id)
+values(8,14);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
