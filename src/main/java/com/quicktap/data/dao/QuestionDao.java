@@ -10,15 +10,18 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.quicktap.data.entity.Questions;
+import com.quicktap.data.entity.Surveys;
 
 /**
  * @author Aashish
  *
  */
+@Transactional
 @Repository
-public class QuestionDao implements ParentDao {
+public class QuestionDao  {
 	@Autowired
     private SessionFactory sessionFactory;
 
@@ -44,5 +47,10 @@ public class QuestionDao implements ParentDao {
 				.add(Restrictions.eq("questionNo", questionNo))
 				.list();
 		return questions.size()>0?questions.get(0):null;
+	}
+
+	public Questions getById(int questionId) {
+		Questions question=sessionFactory.getCurrentSession().get(Questions.class, questionId);
+		return question;
 	}
 }
