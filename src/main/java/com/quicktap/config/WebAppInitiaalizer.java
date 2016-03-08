@@ -31,7 +31,7 @@ public class WebAppInitiaalizer implements WebApplicationInitializer {
 				servletContext.addServlet("DispatcherServlet", new DispatcherServlet(context));
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
-		
+		dispatcher.addMapping("*.json");
 	}
 
 	private AnnotationConfigWebApplicationContext getContext() {
