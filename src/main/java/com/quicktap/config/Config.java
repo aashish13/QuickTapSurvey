@@ -44,8 +44,13 @@ public class Config extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
 		registry.addResourceHandler("/font-awesome/**").addResourceLocations("/WEB-INF/font-awesome/");
 		registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/fonts/");
-		registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/");
+		registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/images/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
+		registry.addResourceHandler("/videos/**").addResourceLocations("/WEB-INF/videos/");
+		registry.addResourceHandler("../images/bs/**").addResourceLocations("/WEB-INF/images/bs");
+		registry.addResourceHandler("/other/**").addResourceLocations("/WEB-INF/other/");
+		registry.addResourceHandler("/login/**").addResourceLocations("/WEB-INF/login/");
+
 	}
 
 	// Below are the configuration required for Hibernate
