@@ -128,6 +128,76 @@ ENGINE = InnoDB;
 insert into users(username,password,api_key)
 values('aashish','Quicktap123','LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06');
 
+insert into question_types(type)
+values
+('Canadian Postal Code'),
+('Currency Amount'),
+('Date Picker'),
+('Email Address'),
+('Gender(Male/Female)'),
+('Image Display(Splash Screen)'),
+('List Picker'),
+('Map Point'),
+('Matrix - Likert Scale'),
+('MCQ - Image Many Answer')
+;
+INSERT INTO `charts` (`id`,`name`) VALUES (1,'PieChart');
+INSERT INTO `charts` (`id`,`name`) VALUES (2,'BarChart');
+INSERT INTO `charts` (`id`,`name`) VALUES (3,'Linechart');
+insert into charts(name)
+values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
+-- adding linking for gender
+insert into charts_questions(charts_id,questions_id)
+values(1,5);
+insert into charts_questions(charts_id,questions_id)
+values(2,5);
+insert into charts_questions(charts_id,questions_id)
+values(3,5);
+insert into charts_questions(charts_id,questions_id)
+values(4,5);
+insert into charts_questions(charts_id,questions_id)
+values(5,5);
+insert into charts_questions(charts_id,questions_id)
+values(6,5);
+insert into charts_questions(charts_id,questions_id)
+values(7,5);
+insert into charts_questions(charts_id,questions_id)
+values(8,5);
+-- Adding linking for List Picker
+insert into charts_questions(charts_id,questions_id)
+values(1,7);
+insert into charts_questions(charts_id,questions_id)
+values(2,7);
+insert into charts_questions(charts_id,questions_id)
+values(3,7);
+insert into charts_questions(charts_id,questions_id)
+values(4,7);
+insert into charts_questions(charts_id,questions_id)
+values(5,7);
+insert into charts_questions(charts_id,questions_id)
+values(6,7);
+insert into charts_questions(charts_id,questions_id)
+values(7,7);
+insert into charts_questions(charts_id,questions_id)
+values(8,7);
+-- MCQ Single Answer
+insert into charts_questions(charts_id,questions_id)
+values(1,14);
+insert into charts_questions(charts_id,questions_id)
+values(2,14);
+insert into charts_questions(charts_id,questions_id)
+values(3,14);
+insert into charts_questions(charts_id,questions_id)
+values(4,14);
+insert into charts_questions(charts_id,questions_id)
+values(5,14);
+insert into charts_questions(charts_id,questions_id)
+values(6,14);
+insert into charts_questions(charts_id,questions_id)
+values(7,14);
+insert into charts_questions(charts_id,questions_id)
+values(8,14);
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
