@@ -13,6 +13,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import javax.persistence.OrderBy;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -112,7 +115,10 @@ public class Surveys implements java.io.Serializable {
 		this.surveyUserLinkses = surveyUserLinkses;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "surveys")
+	
+
 	public Set<Responses> getResponseses() {
 		return this.responseses;
 	}
@@ -121,7 +127,10 @@ public class Surveys implements java.io.Serializable {
 		this.responseses = responseses;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "surveys")
+	@OrderBy("id")
+
 	public Set<Questions> getQuestionses() {
 		return this.questionses;
 	}
