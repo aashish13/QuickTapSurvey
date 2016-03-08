@@ -3,9 +3,13 @@
  */
 package com.quicktap.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.quicktap.service.SyncService;
 
@@ -21,20 +25,20 @@ public class SyncController {
 	
 	@RequestMapping(value="syncsurvey")
 	public String synchSurveysFromServer(){
-		//need to move this code to login controller method/class
-		//synchService.loginQuickTap("aashish");
-		//this method will get all the list of surveys
 		synchService.synchSurveys("aashish");
-		return "redirect:synchresponses";
+		return "redirect:synchresponse";
 	}
-	@RequestMapping(value="synchresponses")
+	@RequestMapping(value="synchresponse")
 	public String synchResponsesFromServer(){
-		//TODO : Need to add functionality to sync a single survey or all surveys 
-		//we will get survey_id from the request 
-		int survey_id=2;
-		//we will get username from session
+		//HttpServletResponse response,@PathVariable int surveyId,@PathVariable String sync
 		String username="aashish";
-		synchService.syncResponses(survey_id,username);
+		/*if(sync.equalsIgnoreCase("all")){
+			synchService.syncResponses(sync,username);
+		}	
+		else{*/
+		int surveyId=12;
+			synchService.syncResponses(surveyId,username);
+		//}	
 		return "redirect:survey";
 	}
 }
