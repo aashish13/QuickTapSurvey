@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import org.neo4j.cypher.internal.compiler.v2_3.ast.rewriters.literalReplacement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.quicktap.data.entity.Users;
 
@@ -18,8 +19,9 @@ import com.quicktap.data.entity.Users;
  * @author Aashish
  *
  */
+@Transactional
 @Repository
-public class UserDao implements ParentDao{
+public class UserDao {
 	@Autowired
     private SessionFactory sessionFactory;
 
