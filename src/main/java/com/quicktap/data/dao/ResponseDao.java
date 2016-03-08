@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.quicktap.data.entity.Responses;
 
@@ -17,8 +18,9 @@ import com.quicktap.data.entity.Responses;
  * @author Aashish
  *
  */
+@Transactional
 @Repository
-public class ResponseDao implements ParentDao {
+public class ResponseDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
