@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<script type="text/javascript">
+		var contextPath = '${pageContext.request.contextPath}';
+	</script>
 <link type="text/css"
 	href="${pageContext.request.contextPath}/other/css/bootstrap.css"
 	rel="stylesheet" />
