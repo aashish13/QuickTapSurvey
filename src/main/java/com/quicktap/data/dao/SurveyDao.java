@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.quicktap.data.entity.Surveys;
 
@@ -17,8 +18,9 @@ import com.quicktap.data.entity.Surveys;
  * @author Aashish
  *
  */
+@Transactional
 @Repository
-public class SurveyDao implements ParentDao{
+public class SurveyDao {
 	@Autowired
     private SessionFactory sessionFactory;
 	
