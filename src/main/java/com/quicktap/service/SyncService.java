@@ -3,8 +3,12 @@
  */
 package com.quicktap.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.quicktap.data.entity.Surveys;
 
 /**
  * @author Aashish
@@ -25,10 +29,24 @@ public class SyncService {
 	}
 
 	/**
-	 * @param survey_id
+	 * @param sync
 	 * @param username 
 	 */
-	public void syncResponses(int survey_id, String username) {
-		surveyService.syncResponses(survey_id,username);
+	public void syncResponses(String sync, String username) {
+		List<Surveys> surveys=surveyService.getSurveyByUsername(username);
+		for (Surveys survey : surveys) {
+			try{
+				syncResponses(survey.getId(),username);
+				Thread.sleep(200);
+			}
+			catch(InterruptedException ie){
+				System.out.println("Interupted exception while delaying the request by 30 Seconds" + ie);
+			}
+		}
+		
+	}
+	
+	public void syncResponses(int id, String username) {
+			surveyService.syncResponses(id,username);
 	}
 }

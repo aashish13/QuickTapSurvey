@@ -3,6 +3,8 @@
  */
 package com.quicktap.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +18,17 @@ import com.quicktap.data.entity.ResponseValues;
 @Service
 public class ResponseValueService {
 	@Autowired
-	private ResponseValueDao responseVaalueDao;
+	private ResponseValueDao responseValueDao;
 	/**
 	 * @param rv
 	 */
 	public void save(ResponseValues rv) {
-		responseVaalueDao.save(rv);
+		responseValueDao.save(rv);
 		
+	}
+	public Map<String, Integer> getResponseWithCount(int questionId) {
+		// TODO Auto-generated method stub
+		return responseValueDao.getResponseValueWithCount(questionId);
 	}
 
 }

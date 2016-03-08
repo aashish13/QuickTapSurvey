@@ -20,6 +20,7 @@ import com.quicktap.data.entity.SurveyUserLinks;
 import com.quicktap.data.entity.Surveys;
 import com.quicktap.data.entity.Users;
 import com.quicktap.integration.apihelper.APICall;
+import com.quicktap.integration.apihelper.connect.ResultCode;
 import com.quicktap.integration.apihelper.data.ApiSurveyDO;
 import com.quicktap.integration.apihelper.data.ApiSurveyElementDO;
 import com.quicktap.integration.apihelper.data.ApiSurveyElementResponseDO;
@@ -102,55 +103,58 @@ public class SurveyService {
 		String api_key = user.getApiKey();
 		// Api call
 		GetSurveyDataResponse getSurveyResponse = APICall.getSurveyResponse(surveyId, username, password, api_key);
-		// Set<Questions> questionDB= survey.getQuestionses();
-		ApiSurveyElementDO[] questionsApi = getSurveyResponse.getQuestions();
-		// Adding questions to database
-		// looping on the api questions because there are chances that the user
-		// may have added new questions
-		for (ApiSurveyElementDO q : questionsApi) {
-			long questionNo = q.getQuestionNumber();
-			String title = q.getQuestionTitle();
-			Questions question = questionService.getByQuestionNumberAndSurveyId(id, questionNo);
-			if (question == null) {
-				question = new Questions();
+		if (getSurveyResponse.getResultCode() == ResultCode.GET_SURVEY_RESPONSES_SUCCESS) {
+			ApiSurveyElementDO[] questionsApi = getSurveyResponse.getQuestions();
+
+			for (ApiSurveyElementDO q : questionsApi) {
+				long questionNo = q.getQuestionNumber();
+				String title = q.getQuestionTitle();
+				Questions question = questionService.getByQuestionNumberAndSurveyId(id, questionNo);
+				if (question == null) {
+					question = new Questions();
+				}
+				question.setTitle(title);
+				question.setQuestionNo(questionNo);
+				question.setSurveys(survey);
+				questionService.save(question);
 			}
-			question.setTitle(title);
-			question.setQuestionNo(questionNo);
-			question.setSurveys(survey);
-			questionService.save(question);
-		}
-		// Adding Responses
-		ApiSurveyResponseDO[] responses = getSurveyResponse.getResponses();
-		for (ApiSurveyResponseDO response : responses) {
-			// TODO : need to build a logic to uniquely identify every response
-			// so that we do not duplicate in the database
-			// for now considering username and date collected combination to
-			// identify them uniquely
-			// TODO : Also need to change the datatype of date collected and
-			// date sent
-			String rUsername = response.getUsername();
-			String dateCollected = response.getDateCollected().toString();
-			Responses r = responseSerice.getResponseByUsernameAndDateCollected(rUsername, dateCollected);
-			boolean flag = false;
-			if (r == null) {
-				r = new Responses();
-				flag = true;
-			}
-			r.setDateCollected(dateCollected);
-			r.setDateSent(response.getDateSent().toString());
-			r.setSurveys(survey);
-			r.setUserName(rUsername);
-			responseSerice.save(r);
-			//considering that if we have a response in the table then its response values are also in the database
-			if (flag) {
-				ApiSurveyElementResponseDO[] responseValues = response.getResponseValues();
-				for (ApiSurveyElementResponseDO value : responseValues) {
-					ResponseValues rv=new ResponseValues();
-					Questions question = questionService.getByQuestionNumberAndSurveyId(id, value.getQuestionNumber());
-					rv.setResponses(r);
-					rv.setQuestions(question);
-					rv.setValue(value.getResponseValue());
-					responseValueService.save(rv);
+			// Adding Responses
+			ApiSurveyResponseDO[] responses = getSurveyResponse.getResponses();
+			for (ApiSurveyResponseDO response : responses) {
+				// TODO : need to build a logic to uniquely identify every
+				// response
+				// so that we do not duplicate in the database
+				// for now considering username and date collected combination
+				// to
+				// identify them uniquely
+				// TODO : Also need to change the datatype of date collected and
+				// date sent
+				String rUsername = response.getUsername();
+				String dateCollected = response.getDateCollected().toString();
+				Responses r = responseSerice.getResponseByUsernameAndDateCollected(rUsername, dateCollected);
+				boolean flag = false;
+				if (r == null) {
+					r = new Responses();
+					flag = true;
+				}
+				r.setDateCollected(dateCollected);
+				r.setDateSent(response.getDateSent().toString());
+				r.setSurveys(survey);
+				r.setUserName(rUsername);
+				responseSerice.save(r);
+				// considering that if we have a response in the table then its
+				// response values are also in the database
+				if (flag) {
+					ApiSurveyElementResponseDO[] responseValues = response.getResponseValues();
+					for (ApiSurveyElementResponseDO value : responseValues) {
+						ResponseValues rv = new ResponseValues();
+						Questions question = questionService.getByQuestionNumberAndSurveyId(id,
+								value.getQuestionNumber());
+						rv.setResponses(r);
+						rv.setQuestions(question);
+						rv.setValue(value.getResponseValue());
+						responseValueService.save(rv);
+					}
 				}
 			}
 		}
@@ -161,7 +165,9 @@ public class SurveyService {
 	 * @param id
 	 * @return
 	 */
-	private Surveys getById(int id) {
+
+	public Surveys getById(int id) {
+
 		return surveyDao.getById(id);
 
 	}
