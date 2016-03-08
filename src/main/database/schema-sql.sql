@@ -124,6 +124,49 @@ CREATE TABLE IF NOT EXISTS `quicktap`.`survey_user_links` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `quicktap`.`charts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`charts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quicktap`.`question_types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`question_types` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `quicktap`.`charts_questions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `quicktap`.`charts_questions` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `charts_id` INT NOT NULL,
+  `questions_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_charts_questions_charts1_idx` (`charts_id` ASC),
+  INDEX `fk_charts_questions_questions1_idx` (`questions_id` ASC),
+  CONSTRAINT `fk_charts_questions_charts1`
+    FOREIGN KEY (`charts_id`)
+    REFERENCES `quicktap`.`charts` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_charts_questions_questions1`
+    FOREIGN KEY (`questions_id`)
+    REFERENCES `quicktap`.`question_types` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 
 insert into users(username,password,api_key)
 values('aashish','Quicktap123','LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06');
