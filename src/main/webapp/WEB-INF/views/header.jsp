@@ -23,19 +23,19 @@
 </head>
 <body>
 
-	<section id="container"> <header class="header black-bg">
+	<!-- <section id="container"> <header class="header black-bg">
 	<div class="sidebar-toggle-box">
 		<div class="fa fa-bars tooltips" data-placement="right"
 			data-original-title="Toggle Navigation"></div>
 	</div>
-	<!--logo start--> <a href="/QuickTapSurvey/" class="logo"><b>Capstone</b></a>
-	<!--logo end-->
+	logo start <a href="/QuickTapSurvey/" class="logo"><b>Capstone</b></a>
+	logo end
 	<div class="top-menu">
 		<ul class="nav pull-right top-menu">
 			<li><a class="logout" href="/QuickTapSurvey/login">Logout</a></li>
 		</ul>
 	</div>
-	</header> <!--header end--> <!--sidebar start--> <aside>
+	</header> </section> --><!--header end--> <!--sidebar start--> <aside>
 	<div id="sidebar" class="nav-collapse ">
 		<!-- sidebar menu start-->
 		<ul class="sidebar-menu" id="nav-accordion">
@@ -45,12 +45,12 @@
 					src="${pageContext.request.contextPath}/other/img/pc.png"
 					class="img-circle" width="60"></a>
 			</p>
-			<h5 class="centered">User</h5>
+			<h5 class="centered">Aashish</h5>
 
-			<li class="mt"><a href=""> <i class="fa fa-dashboard"></i> <span><b>Dashboard</b></span>
+			<li class="mt"><a href="/QuickTapSurvey/survey"> <i class="fa fa-dashboard"></i> <span><b>Dashboard</b></span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTapSurvey/charts"> <i
+			<li class="sub-menu"><a href="/QuickTapSurvey/survey"> <i
 					class="fa fa-desktop"></i> <span><b>Surveys</b></span>
 			</a></li>
 

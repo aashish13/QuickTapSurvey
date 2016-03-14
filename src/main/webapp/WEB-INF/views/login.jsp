@@ -51,7 +51,9 @@
     <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
     	<div class="container">
     		<!-- <div class="row"> -->
-                 <div class="navbar-header ">
+                 <div class="navbar-header " style="
+    margin-left: -50px;
+">
                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -67,7 +69,7 @@
                         <ul class="nav navbar-nav navbar-right ">
                            	<li class="active"> <a href="/QuickTapSurvey" class="page-scroll" style="font-size:18px;font-weight:bolder;"><b>Home</b> </a></li>
                           
-                            <li><a href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-home&rt=fbt" class="page-scroll" style="font-size:15px;font-weight:bolder;">SignUp</a> </li>
+                            <li><a href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-home&rt=fbt" class="page-scroll" style="font-size:15px;font-weight:bolder;" target="_blank">SignUp</a> </li>
                         </ul>
                      </nav>
                 </div><!-- /.container-fluid -->
@@ -84,7 +86,7 @@
             <input type="text" placeholder="Username" required>
             <input type="password" placeholder="Password" required> 
             <button type="submit" id="login-button">Login</button>
-            <h5><a style="color:black;" href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-home&rt=fbt">Don't have an account? <b>Sign Up</b></a></h5>
+            <h5><a style="color:black;" href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-home&rt=fbt" target="_blank">Don't have an account? <b>Sign Up</b></a></h5>
                     </form>
                     
     </div>

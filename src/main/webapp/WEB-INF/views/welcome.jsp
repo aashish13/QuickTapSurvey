@@ -66,7 +66,7 @@
                         <ul class="nav navbar-nav navbar-right ">
                            	<li class="active"> <a href="#home" class="page-scroll">Home </a></li>
                           <!--  <li><a href="#service" class="page-scroll" >QuickTapSurvey</a> </li> -->
-                            <li><a href="#portfolio"  class="page-scroll">Data Collection</a> </li>
+                            <li><a href="#portfolio"  class="page-scroll">Data Visualization</a> </li>
                             <li><a href="#about" class="page-scroll">StartUp </a> </li>
                             <li><a href="#team" class="page-scroll">Our Team </a> </li>
                             
@@ -128,7 +128,9 @@
                                     <i class="fa fa-desktop"></i>
                                     <h5>No &nbsp;Internet &nbsp;Required</h5>
                                     <p>Never rely on internet again! <br>Wherever you are, <br>you can count on <br>QuickTapSurvey.</p>
-                                    <button class="btn btn-main"> Internet</button>
+                                    <button class="btn btn-main" style="
+    width: 160px;
+"> Internet</button>
                                 </div>
                         </div> 
                         
@@ -137,7 +139,9 @@
                                     <i class="fa fa-pencil"></i>
                                     <h5>Beautiful &nbsp;Design</h5>
                                     <p>Make your surveys <br>look great by customizing <br>the layout and <br>design. </p>
-                                    <button class="btn btn-main"> Design</button>
+                                    <button class="btn btn-main" style="
+    width: 160px;
+"> Design</button>
                                 </div>
                         </div> <!-- Col-md-4 Single_feature End -->
                         <div class="col-md-3 col-xs-12 col-sm-6">
@@ -145,7 +149,9 @@
                                     <i class="fa fa-cog"></i>
                                     <h5>Quick &nbsp;and &nbsp;Easy &nbsp;Setup</h5>
                                     <p>Quick and Easy Setup helps you <br>Choose one of our templates <br>or create your own survey <br>in minutes. </p>
-                                    <button class="btn btn-main"> Setup</button>
+                                    <button class="btn btn-main" style="
+    width: 160px;
+"> Setup</button>
                                 </div>
                         </div> <!-- Col-md-4 Single_feature End -->
                         <div class="col-md-3 col-xs-12 col-sm-6">
@@ -153,7 +159,9 @@
                                     <i class="fa fa-lightbulb-o"></i>
                                     <h5>Make &nbsp;Better &nbsp;Decisions</h5>
                                     <p>Instant graphical reports <br>help you understand your <br>customers and make <br>data-driven decisions.</p>
-                                    <button class="btn btn-main"> Decisions</button>
+                                    <button class="btn btn-main" style="
+    width: 160px;
+"> Decisions</button>
                                 </div>
                             </div>
                         <!-- Col-md-4 Single_feature End -->
@@ -172,8 +180,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="feature_header text-center">
-                        <h3 class="feature_title">Collect <b>DATA</b></h3>
-                        <h4 class="feature_sub">Our on-site surveys are easy to create, fun to do and provide fast, actionable insights and collect data easily for the following </h4>
+                        <h3 class="feature_title">Visualize <b>DATA</b></h3>
+                        <h4 class="feature_sub">Our on-site surveys are easy to create, fun to do and provide fast, <br>actionable insights by collecting data and visualizing them easily for the following </h4>
                         <div class="divider"></div>
                     </div>
                 </div>  <!-- Col-md-12 End -->
@@ -351,7 +359,7 @@
             <div class="feature-tab">
             <div class="col-md-6">
                 <div class="tab-content">
-                      <div role="tabpanel" class="tab-pane active" id="home">
+                      <div role="tabpanel" class="tab-pane active" id="profile1">
                       		<img src="${pageContext.request.contextPath}/img/about/web1.png" alt="" class="img-responsive">
                       </div>
                       <div role="tabpanel" class="tab-pane" id="profile">
@@ -364,9 +372,9 @@
             </div>
             <div class="col-md-6">
                 <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active">
-                      	<a href="#home" role="tab" data-toggle="tab" >
-                      		<div class="col-sm-12 single-feature">
+                      <li role="presentation">
+                      	<a href="#profile1" role="tab" data-toggle="tab">
+                            <div class="col-sm-12 single-feature">
                                 <div class="col-sm-2 feature-icon">
                                     <i class="fa fa-laptop"></i>
                                 </div>
@@ -376,8 +384,8 @@
                                 </div>
                             </div>
                       	</a>
-                      	</li>
-                      <li role="presentation">
+                      </li>
+                       <li role="presentation">
                       	<a href="#profile" role="tab" data-toggle="tab">
                             <div class="col-sm-12 single-feature">
                                 <div class="col-sm-2 feature-icon">
@@ -760,7 +768,9 @@
                         <a class="prev left">
                         	<i class="fa fa-chevron-left"></i>
                        	</a>
-                        <a class="next right">
+                        <a class="next right" style="
+    margin-left: -3px;
+">
                           <i class="fa fa-chevron-right"></i>
                         </a>
                 	</div>
@@ -845,10 +855,10 @@
                     <h3 class="menu_head">Main Menu</h3>
                     <div class="footer_menu">
                         <ul>
-                            <li><a href="#about">Home</a></li>
+                            <li><a href="#home">Home</a></li>
                             <li><a href="#service">Service</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#blog">Login</a></li>
+                            <li><a href="#portfolio">Data Collection</a></li>
+                            <li><a href="login">Login</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>

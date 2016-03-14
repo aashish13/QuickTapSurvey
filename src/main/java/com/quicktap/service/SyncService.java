@@ -37,7 +37,7 @@ public class SyncService {
 		for (Surveys survey : surveys) {
 			try{
 				syncResponses(survey.getId(),username);
-				Thread.sleep(200);
+				Thread.sleep(330);
 			}
 			catch(InterruptedException ie){
 				System.out.println("Interupted exception while delaying the request by 30 Seconds" + ie);
