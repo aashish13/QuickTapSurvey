@@ -22,6 +22,8 @@ public class ApiSurveyResponseDO {
 	private String username;
 	private Timestamp dateCollected;
 	private Timestamp dateSent;
+	private float latitude;
+	private float longitude;
 	private ApiSurveyMetaDataResponseDO[] responseFilterResponseValues;
 	private ApiSurveyElementResponseDO[] responseValues;
 
@@ -115,4 +117,21 @@ public class ApiSurveyResponseDO {
 	public void setResponseValues(ApiSurveyElementResponseDO[] responseValues) {
 		this.responseValues = responseValues;
 	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+	
 }

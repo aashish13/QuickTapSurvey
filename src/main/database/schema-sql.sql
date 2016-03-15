@@ -68,6 +68,8 @@ CREATE TABLE IF NOT EXISTS `quicktap`.`responses` (
   `date_sent` VARCHAR(45) NOT NULL,
   `surveys_id` INT NOT NULL,
   `user_name` VARCHAR(45) NOT NULL,
+  `latitude` FLOAT(10,6) NULL,
+  `longitude` FLOAT(10,6) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_responses_surveys1_idx` (`surveys_id` ASC),
   CONSTRAINT `fk_responses_surveys1`
@@ -76,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `quicktap`.`responses` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `quicktap`.`response_values`

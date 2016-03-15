@@ -138,6 +138,8 @@ public class SurveyService {
 					flag = true;
 				}
 				r.setDateCollected(dateCollected);
+				r.setLatitude(response.getLatitude());
+				r.setLongitude(response.getLongitude());
 				r.setDateSent(response.getDateSent().toString());
 				r.setSurveys(survey);
 				r.setUserName(rUsername);

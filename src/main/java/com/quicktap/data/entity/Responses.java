@@ -1,18 +1,19 @@
 package com.quicktap.data.entity;
-// Generated Feb 20, 2016 7:10:56 PM by Hibernate Tools 4.3.1.Final
+// Generated Mar 14, 2016 8:30:04 PM by Hibernate Tools 4.3.1.Final
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +28,8 @@ public class Responses implements java.io.Serializable {
 	private String dateCollected;
 	private String dateSent;
 	private String userName;
+	private Float latitude;
+	private Float longitude;
 	private Set<ResponseValues> responseValueses = new HashSet<ResponseValues>(0);
 
 	public Responses() {
@@ -39,18 +42,19 @@ public class Responses implements java.io.Serializable {
 		this.userName = userName;
 	}
 
-	public Responses(Surveys surveys, String dateCollected, String dateSent, String userName,
-			Set<ResponseValues> responseValueses) {
+	public Responses(Surveys surveys, String dateCollected, String dateSent, String userName, Float latitude,
+			Float longitude, Set<ResponseValues> responseValueses) {
 		this.surveys = surveys;
 		this.dateCollected = dateCollected;
 		this.dateSent = dateSent;
 		this.userName = userName;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.responseValueses = responseValueses;
 	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return this.id;
@@ -60,7 +64,7 @@ public class Responses implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "surveys_id", nullable = false)
 	public Surveys getSurveys() {
 		return this.surveys;
@@ -97,10 +101,25 @@ public class Responses implements java.io.Serializable {
 		this.userName = userName;
 	}
 
+	@Column(name = "latitude", precision = 10, scale = 6)
+	public Float getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(Float latitude) {
+		this.latitude = latitude;
+	}
+
+	@Column(name = "longitude", precision = 10, scale = 6)
+	public Float getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(Float longitude) {
+		this.longitude = longitude;
+	}
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "responses")
-	@OrderBy("questions")
-
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
 	}

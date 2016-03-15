@@ -37,7 +37,7 @@ public class SyncController {
 		}	
 		else{*/
 		int surveyId=11;
-			synchService.syncResponses(12,username);
+			synchService.syncResponses("",username);
 		//}	
 		return "redirect:survey";
 	}
