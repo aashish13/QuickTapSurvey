@@ -26,19 +26,18 @@ public class SyncController {
 	@RequestMapping(value="syncsurvey")
 	public String synchSurveysFromServer(){
 		synchService.synchSurveys("aashish");
-		return "redirect:synchresponse";
+		return "redirect:synchallresponse";
 	}
-	@RequestMapping(value="synchresponse")
-	public String synchResponsesFromServer(){
-		//HttpServletResponse response,@PathVariable int surveyId,@PathVariable String sync
+	@RequestMapping(value="synchallresponse")
+	public String synchAllResponsesFromServer(){
 		String username="aashish";
-		/*if(sync.equalsIgnoreCase("all")){
-			synchService.syncResponses(sync,username);
-		}	
-		else{*/
-		int surveyId=11;
-			synchService.syncResponses("",username);
-		//}	
+		synchService.syncResponses("",username);
 		return "redirect:survey";
+	}
+	@RequestMapping(value="syncresponse/{id}")
+	public String synchSpecificResponsesFromServer(@PathVariable int id){
+		String username="aashish";
+		synchService.syncResponses(id,username);
+		return "redirect:../survey";
 	}
 }

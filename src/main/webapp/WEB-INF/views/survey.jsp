@@ -71,9 +71,7 @@
 		role="banner">
 		<div class="container">
 			<!-- <div class="row"> -->
-			<div class="navbar-header " style="
-    margin-left: -50px;
-">
+			<div class="navbar-header " style="margin-left: -50px;">
 				<div class="sidebar-toggle-box">
 					<div class="fa fa-bars tooltips" data-placement="right"
 						data-original-title="Toggle Navigation"></div>
@@ -98,9 +96,8 @@
 						class="page-scroll" style="font-size: 18px; font-weight: bolder;"><b>Home</b>
 					</a></li>
 
-					<li><a
-						class="page-scroll" style="font-size: 15px; font-weight: bolder;">Aashish</a>
-					</li>
+					<li><a class="page-scroll"
+						style="font-size: 15px; font-weight: bolder;">Aashish</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -113,13 +110,9 @@
 
 		<section class="wrapper" style="padding-bottom: 80px;">
 
-			<h3 style="
-    text-align: center;
-    color: #ee3b24;
-    margin-top: 20px;
-">
+			<h3 style="text-align: center; color: #ee3b24; margin-top: 20px;">
 				<b> Active Surveys</b>
-				
+
 			</h3>
 
 
@@ -138,7 +131,7 @@
 							</h4>
 
 							<br>
-							<thead style="background: #eee; color:black;">
+							<thead style="background: #eee; color: black;">
 								<tr>
 									<th><b>#</b></th>
 									<th><b>Survey Id</b></th>
@@ -168,7 +161,7 @@
 													<li><a style="color: white"
 														href="response?id=${survey.id}">Responses</a></li>
 													<li><a style="color: white"
-														href="survey">Sync Now</a></li>
+														href="syncresponse/${survey.id}">Sync Now</a></li>
 													<li><a style="color: white" href="charts/${survey.id}">Report</a></li>
 												</ul>
 											</div>
