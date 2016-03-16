@@ -17,8 +17,8 @@ import lombok.ToString;
 public class ChartData {
 	String chartType;
 	String question;
-	Map<String,String> columns;
-	Map<String,Integer> rows;
+	Map columns;
+	Map rows;
 	public String getChartType() {
 		return chartType;
 	}
@@ -31,16 +31,16 @@ public class ChartData {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-	public Map<String, String> getColumns() {
+	public Map getColumns() {
 		return columns;
 	}
-	public void setColumns(Map<String, String> columns) {
+	public void setColumns(Map columns) {
 		this.columns = columns;
 	}
-	public Map<String, Integer> getRows() {
+	public Map getRows() {
 		return rows;
 	}
-	public void setRows(Map<String, Integer> rows) {
+	public void setRows(Map rows) {
 		this.rows = rows;
 	}
 	

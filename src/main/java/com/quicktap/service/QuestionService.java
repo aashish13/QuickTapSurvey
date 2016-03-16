@@ -63,6 +63,9 @@ public class QuestionService{
 			if(allowedQuestions.contains(questionId))
 				questions.put(question.getId(),Utils.getOnlyTitle(question.getTitle()));
 		}
+		//Adding survey as a question type for GeoChart
+		if (chartName.equalsIgnoreCase("GeoChart"))
+			questions.put(surveyId,"Survey");
 		return questions;
 	}
 	

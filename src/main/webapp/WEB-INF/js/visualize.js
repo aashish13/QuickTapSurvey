@@ -1,6 +1,6 @@
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {
-	'packages' : [ 'corechart' ]
+	'packages' : [ 'corechart','geochart' ]
 });
 
 // Set a callback to run when the Google Visualization API is loaded.
@@ -27,19 +27,32 @@ $(window).load(
 function visualize(data) {
 	// var dataTable = getDataTableValues(null);
 	var dataTable = new google.visualization.DataTable();
-
-	$.each(data.columns,function(k,v){
-		dataTable.addColumn(k, v);
-	});
-	var rows = [];
-	for(var i in data.rows)
-		rows.push([i, data.rows[i]]);
-	
-	dataTable.addRows(rows);
-
 	var chartType = data.chartType;
-	//chartType="Histogram";
+	var rows = [];
 	var question = data.question;
+	if(chartType==='GeoChart'){
+		dataTable.addColumn('number','Lat');
+		dataTable.addColumn('number','Lon');
+	}
+	else{
+		$.each(data.columns,function(k,v){
+			dataTable.addColumn(k, v);
+		});
+	}
+	
+	if(chartType==='GeoChart'){
+		for(var i in data.rows)
+			rows.push([parseFloat(i), parseFloat(data.rows[i])]);
+	}
+	else{
+		for(var i in data.rows)
+			rows.push([i, data.rows[i]]);
+	}
+	
+	
+	
+	dataTable.addRows(rows);	
+	//chartType="Histogram";
 	drawChart(dataTable, chartType,question);
 }
 

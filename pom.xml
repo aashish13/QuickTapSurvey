@@ -85,6 +85,11 @@
 			<artifactId>neo4j-cypher-compiler-2.3</artifactId>
 			<version>2.3.2</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -4,6 +4,8 @@
 package com.quicktap.service;
 
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,14 @@ public class ResponseService{
 	public void save(Responses response) {
 		responseDao.save(response);
 		
+	}
+
+	/**
+	 * @param questionId
+	 * @return
+	 */
+	public Map<Float,Float> getLatitudeAndLongitude(int questionId) {
+		return responseDao.getLatitudeAndLongitude(questionId);
 	}
 
 }

@@ -3,7 +3,9 @@
  */
 package com.quicktap.data.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -41,5 +43,19 @@ public class ResponseDao{
 	 */
 	public void save(Responses response) {
 		sessionFactory.getCurrentSession().saveOrUpdate(response);
+	}
+	/**
+	 * @param surveyId
+	 */
+	public Map<Float,Float> getLatitudeAndLongitude(int surveyId) {
+		Criteria criteria=sessionFactory.getCurrentSession().createCriteria(Responses.class);
+		criteria.add(Restrictions.eq("surveys.id", surveyId));
+		List<Responses> responseList=criteria.list();
+		Map<Float,Float> location=new HashMap<Float,Float>();
+		for (Responses response: responseList) {
+			if(response.getLatitude()!=0)
+			location.put(response.getLatitude(), response.getLongitude());
+		}
+		return location;
 	}
 }

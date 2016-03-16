@@ -26,7 +26,7 @@ public class ResponseValueService {
 		responseValueDao.save(rv);
 		
 	}
-	public Map<String, Integer> getResponseWithCount(int questionId) {
+	public Map getResponseWithCount(int questionId) {
 		// TODO Auto-generated method stub
 		return responseValueDao.getResponseValueWithCount(questionId);
 	}

@@ -71,9 +71,7 @@
 		role="banner">
 		<div class="container">
 			<!-- <div class="row"> -->
-			<div class="navbar-header " style="
-    margin-left: -50px;
-">
+			<div class="navbar-header " style="margin-left: -50px;">
 				<div class="sidebar-toggle-box">
 					<div class="fa fa-bars tooltips" data-placement="right"
 						data-original-title="Toggle Navigation"></div>
@@ -98,9 +96,8 @@
 						class="page-scroll" style="font-size: 18px; font-weight: bolder;"><b>Home</b>
 					</a></li>
 
-					<li><a
-						class="page-scroll" style="font-size: 15px; font-weight: bolder;">Aashish</a>
-					</li>
+					<li><a class="page-scroll"
+						style="font-size: 15px; font-weight: bolder;">Aashish</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -110,48 +107,57 @@
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 	<section id="main-content">
 		<section class="wrapper" style="padding-bottom: 80px;">
-			<h3 style="
-    text-align: center;
-    color: #ee3b24;
-    margin-top: 20px; 
-">
+			<h3 style="text-align: center; color: #ee3b24; margin-top: 20px;">
 				<b> REPORTS</b>
-				
+
 			</h3>
 			<!-- page start-->
-		<a href="${pageContext.request.contextPath}/visualize/ColumnChart/${surveyId}" class="btn btn-main featured" style="
-    width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;
-">Column Chart</i></a>
-			<a href="${pageContext.request.contextPath}/visualize/ComboChart/${surveyId}" style="
-    width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;
-" class="btn btn-main featured">Combo Chart</i></a>
-			<a href="${pageContext.request.contextPath}/visualize/SteppedAreaChart/${surveyId}" style="
-    width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;
-" class="btn btn-main featured">Stepped Area Chart</i></a>
-			<a href="${pageContext.request.contextPath}/visualize/AreaChart/${surveyId}" style="
-    width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;
-" class="btn btn-main featured">Area Chart</i></a>
-	<a href="${pageContext.request.contextPath}/visualize/Histogram/${surveyId}" style="
-    width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;
-" class="btn btn-main featured">Histogram</i></a>
-			
+			<a
+				href="${pageContext.request.contextPath}/visualize/GeoChart/${surveyId}"
+				class="btn btn-main featured"
+				style="width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;">Geo Chart</i>
+			</a>
+			<a
+				href="${pageContext.request.contextPath}/visualize/ColumnChart/${surveyId}"
+				class="btn btn-main featured"
+				style="width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;">Column
+				Chart</i>
+			</a> 
+			<a href="${pageContext.request.contextPath}/visualize/ComboChart/${surveyId}"
+				style="width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;"
+				class="btn btn-main featured">Combo Chart</i>
+			</a> 
+			<a href="${pageContext.request.contextPath}/visualize/SteppedAreaChart/${surveyId}"
+				style="width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;"
+				class="btn btn-main featured">Stepped Area Chart</i>
+			</a> 
+			<a href="${pageContext.request.contextPath}/visualize/AreaChart/${surveyId}"
+				style="width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;"
+				class="btn btn-main featured">Area Chart</i></a> <a
+				href="${pageContext.request.contextPath}/visualize/Histogram/${surveyId}"
+				style="width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;"
+				class="btn btn-main featured">Histogram</i>
+			</a>
+
 			<div class="tab-pane" id="chartjs">
 				<div class="row mt">
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<a
 								href="${pageContext.request.contextPath}/visualize/PieChart/${surveyId}">
-							<h4>
+								<h4>
 									<i class="fa fa-angle-right"></i> Pie
-							</h4>
-							<div class="panel-body text-center">
+								</h4>
+								<div class="panel-body text-center">
 									<canvas id="pie" height="300" width="400"></canvas>
-							</div>
+								</div>
 							</a>
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<h4>
 								<i class="fa fa-angle-right"></i> Line <a
 									href="${pageContext.request.contextPath}/visualize/LineChart/${surveyId}">
@@ -166,10 +172,11 @@
 				</div>
 				<div class="row mt">
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<h4>
-								<i class="fa fa-angle-right"></i> Bar 
-								<a href="${pageContext.request.contextPath}/visualize/BarChart/${surveyId}">
+								<i class="fa fa-angle-right"></i> Bar <a
+									href="${pageContext.request.contextPath}/visualize/BarChart/${surveyId}">
 							</h4>
 							<div class="panel-body text-center">
 								<canvas id="bar" height="300" width="400"></canvas>
@@ -179,7 +186,8 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<h4>
 								<i class="fa fa-angle-right"></i> Polar Area
 							</h4>
@@ -191,7 +199,8 @@
 				</div>
 				<div class="row mt">
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<h4>
 								<i class="fa fa-angle-right"></i> Radar
 							</h4>
@@ -201,7 +210,8 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="content-panel" style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						<div class="content-panel"
+							style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 							<h4>
 								<i class="fa fa-angle-right"></i> Doughnut
 							</h4>
@@ -218,7 +228,8 @@
 	<jsp:include page="footer.jsp" />
 	<script src="${pageContext.request.contextPath}/other/js/Chart.js"
 		type="text/javascript"></script>
-	<script src="${pageContext.request.contextPath}/other/js/chartjs-conf.js"
+	<script
+		src="${pageContext.request.contextPath}/other/js/chartjs-conf.js"
 		type="text/javascript"></script>
 	<script>
 		$(function() {

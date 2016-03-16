@@ -58,6 +58,9 @@
 	rel='stylesheet' type='text/css'>
 <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500"
 	rel='stylesheet' type='text/css'>
+	<!-- Required files for geochart to work -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/login/css/style.css">
 

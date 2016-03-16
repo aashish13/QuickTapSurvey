@@ -43,13 +43,14 @@ public class ResponseValueDao {
 						+ "where questions_id = "+questionId+" group by value");
 		
 		List list=sqlQuery.list();
-		Map<String,Integer> returnValue=new HashMap<String,Integer>();
+		Map returnValue=new HashMap();
 		for (Object object : list) {
 			Object[] o=(Object[]) object;
 			Integer count=Integer.valueOf((o[1]).toString()) ;
 			String value=(o[0]).toString();
-			returnValue.put(value, count);
+			returnValue.put(o[0], o[1]);
 		}
 		return returnValue;
 	}
+
 }
