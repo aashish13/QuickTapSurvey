@@ -242,6 +242,7 @@ values(7,14);
 insert into charts_questions(charts_id,questions_id)
 values(8,14);
 
+INSERT INTO `charts` (`name`) VALUES ('GeoChart');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
