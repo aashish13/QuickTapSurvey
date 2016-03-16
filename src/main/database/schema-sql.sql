@@ -172,19 +172,47 @@ ENGINE = InnoDB;
 insert into users(username,password,api_key)
 values('aashish','Quicktap123','LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06');
 
-insert into question_types(type)
-values
-('Canadian Postal Code'),
-('Currency Amount'),
-('Date Picker'),
-('Email Address'),
-('Gender(Male/Female)'),
-('Image Display(Splash Screen)'),
-('List Picker'),
-('Map Point'),
-('Matrix - Likert Scale'),
-('MCQ - Image Many Answer')
-;
+
+INSERT INTO `question_types` (`id`,`type`) VALUES (1,'Canadian Postal Code');
+INSERT INTO `question_types` (`id`,`type`) VALUES (2,'Currency Amount');
+INSERT INTO `question_types` (`id`,`type`) VALUES (3,'Date Picker');
+INSERT INTO `question_types` (`id`,`type`) VALUES (4,'Email Address');
+INSERT INTO `question_types` (`id`,`type`) VALUES (5,'Gender(Male/Female)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (6,'Image Display(Splash Screen)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (7,'List Picker');
+INSERT INTO `question_types` (`id`,`type`) VALUES (8,'Map Point');
+INSERT INTO `question_types` (`id`,`type`) VALUES (9,'Matrix - Likert Scale');
+INSERT INTO `question_types` (`id`,`type`) VALUES (10,'MCQ - Image Many Answer');
+INSERT INTO `question_types` (`id`,`type`) VALUES (11,'Decimal Number');
+INSERT INTO `question_types` (`id`,`type`) VALUES (12,'MCQ - Image Single Answers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (13,'MCQ - Many Answers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (14,'MCQ - Single Answers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (15,'Net Promoter Score');
+INSERT INTO `question_types` (`id`,`type`) VALUES (16,'Number');
+INSERT INTO `question_types` (`id`,`type`) VALUES (17,'PDF (IOS)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (18,'Photo Capture');
+INSERT INTO `question_types` (`id`,`type`) VALUES (19,'QR Code Reader');
+INSERT INTO `question_types` (`id`,`type`) VALUES (20,'Ranking');
+INSERT INTO `question_types` (`id`,`type`) VALUES (21,'Satisfaction  Rating');
+INSERT INTO `question_types` (`id`,`type`) VALUES (22,'Scratch Card');
+INSERT INTO `question_types` (`id`,`type`) VALUES (23,'SerialNumber (AlphaNumeric)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (24,'Signature Capture');
+INSERT INTO `question_types` (`id`,`type`) VALUES (25,'Slider');
+INSERT INTO `question_types` (`id`,`type`) VALUES (26,'Star Rating');
+INSERT INTO `question_types` (`id`,`type`) VALUES (27,'Stop Watch');
+INSERT INTO `question_types` (`id`,`type`) VALUES (28,'Summery');
+INSERT INTO `question_types` (`id`,`type`) VALUES (29,'Telephone(US/Canada)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (30,'Telephone(International)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (31,'Terms & Conditions');
+INSERT INTO `question_types` (`id`,`type`) VALUES (32,'Text Display');
+INSERT INTO `question_types` (`id`,`type`) VALUES (33,'Text Multiline');
+INSERT INTO `question_types` (`id`,`type`) VALUES (34,'Text Singleline');
+INSERT INTO `question_types` (`id`,`type`) VALUES (35,'True or False');
+INSERT INTO `question_types` (`id`,`type`) VALUES (36,'Yes or No');
+INSERT INTO `question_types` (`id`,`type`) VALUES (37,'US Zipcode');
+INSERT INTO `question_types` (`id`,`type`) VALUES (38,'Website URL');
+INSERT INTO `question_types` (`id`,`type`) VALUES (39,'Website Viewer');
+INSERT INTO `question_types` (`id`,`type`) VALUES (40,'Youtube Video');
 INSERT INTO `charts` (`name`) VALUES ('PieChart');
 INSERT INTO `charts` (`name`) VALUES ('BarChart');
 INSERT INTO `charts` (`name`) VALUES ('Linechart');
