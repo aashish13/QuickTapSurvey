@@ -185,9 +185,9 @@ values
 ('Matrix - Likert Scale'),
 ('MCQ - Image Many Answer')
 ;
-INSERT INTO `charts` (`id`,`name`) VALUES (1,'PieChart');
-INSERT INTO `charts` (`id`,`name`) VALUES (2,'BarChart');
-INSERT INTO `charts` (`id`,`name`) VALUES (3,'Linechart');
+INSERT INTO `charts` (`name`) VALUES ('PieChart');
+INSERT INTO `charts` (`name`) VALUES ('BarChart');
+INSERT INTO `charts` (`name`) VALUES ('Linechart');
 insert into charts(name)
 values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
 -- adding linking for gender
