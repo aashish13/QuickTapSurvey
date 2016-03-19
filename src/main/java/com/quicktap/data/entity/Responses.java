@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 /**
@@ -120,6 +121,7 @@ public class Responses implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "responses")
+	@OrderBy("id")
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
 	}
