@@ -27,4 +27,7 @@ public class AnalysisRestController {
 		ChartData chartData=visualizationService.getChartData(questionId, chartType);
 		return chartData;
 	}
+	
+	
+	
 }
