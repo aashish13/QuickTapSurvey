@@ -3,6 +3,7 @@
  */
 package com.quicktap.data.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -29,6 +30,14 @@ public class ChartsDao {
 		Criteria chartsCriteria=sessionFactory.getCurrentSession().createCriteria(Charts.class);
 		List<Charts> charts=(List<Charts>) chartsCriteria.add(Restrictions.eq("name", chartName)).list();
 		return charts.isEmpty()?null:charts.get(0);
+	}
+
+	/**
+	 * @return
+	 */
+	public List<Charts> getAllCharts() {
+		// TODO Auto-generated method stub
+		return (ArrayList) sessionFactory.getCurrentSession().createQuery("From Charts").list();
 	}
 
 }

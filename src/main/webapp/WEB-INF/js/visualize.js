@@ -25,7 +25,6 @@ $(window).load(
 		});
 
 function visualize(data) {
-	// var dataTable = getDataTableValues(null);
 	var dataTable = new google.visualization.DataTable();
 	var chartType = data.chartType;
 	var rows = [];
@@ -48,9 +47,6 @@ function visualize(data) {
 		for(var i in data.rows)
 			rows.push([i, data.rows[i]]);
 	}
-	
-	
-	
 	dataTable.addRows(rows);	
 	//chartType="Histogram";
 	drawChart(dataTable, chartType,question);
@@ -74,14 +70,4 @@ function drawChart(dataTable, chartType,question) {
 	// get data from ajax
 	chart.setDataTable(dataTable);
 	chart.draw();
-}
-function getDataTableValues(dataForDataTable) {
-	var dataTable = new google.visualization.DataTable();
-
-	dataTable.addColumn('string', 'Gender');
-	dataTable.addColumn('number', 'Count');
-
-	dataTable.addRows([ [ 'Male', 10 ], [ 'Female', 23 ] ]);
-	return dataTable;
-
 }

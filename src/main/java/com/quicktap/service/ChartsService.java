@@ -3,6 +3,8 @@
  */
 package com.quicktap.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,14 @@ public class ChartsService{
 	public Charts getChartByName(String chartName) {
 		Charts chart=chartsDao.getChartByName(chartName);
 		return chart;
+	}
+
+	/**
+	 * @return
+	 */
+	public List<Charts> getAllCharts() {
+		// TODO Auto-generated method stub
+		return chartsDao.getAllCharts();
 	}
 
 }
