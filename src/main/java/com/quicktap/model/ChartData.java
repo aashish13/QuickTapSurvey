@@ -5,6 +5,10 @@ package com.quicktap.model;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
+import com.quicktap.analysis.ChartsEnum;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,16 +17,16 @@ import lombok.ToString;
  * @author Aashish
  *
  */
-
+@Component
 public class ChartData {
-	String chartType;
+	ChartsEnum chartType;
 	String question;
 	Map columns;
 	Map rows;
-	public String getChartType() {
+	public ChartsEnum getChartType() {
 		return chartType;
 	}
-	public void setChartType(String chartType) {
+	public void setChartType(ChartsEnum chartType) {
 		this.chartType = chartType;
 	}
 	public String getQuestion() {
