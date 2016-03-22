@@ -46,5 +46,8 @@ public class ResponseService{
 	public Map<Float,Float> getLatitudeAndLongitude(int questionId) {
 		return responseDao.getLatitudeAndLongitude(questionId);
 	}
+	
+	
+	
 
 }

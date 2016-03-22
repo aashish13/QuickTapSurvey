@@ -65,6 +65,7 @@ function drawChart(dataTable, chartType,question) {
 		containerId : 'chart_div'
 	});
 	// get chart type from ajax
+	chartType = 'Gauge';
 	chart.setChartType(chartType);
 	chart.setOptions(options);
 	// get data from ajax
