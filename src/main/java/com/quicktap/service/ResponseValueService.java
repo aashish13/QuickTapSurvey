@@ -35,11 +35,13 @@ public class ResponseValueService {
 		// TODO Auto-generated method stub
 		
 		Map<String,Integer> npsValue=responseValueDao.getNPSValues(questionId);
-		Integer promoters=npsValue.get("promoters");
-		Integer detractors=npsValue.get("detractors");
-		Integer passives=npsValue.get("passives");
-		Integer respondents=promoters+detractors+passives;
-        float nps = (float) ((promoters - detractors)/(respondents)*100);
+		float promoters=npsValue.get("promoters");
+		float detractors=npsValue.get("detractors");
+		float passives=npsValue.get("passives");
+		float respondents=promoters+detractors+passives;
+		float promotersPercent = ((promoters/respondents)*100);
+		float detractorsPercent = ((detractors/respondents)*100);
+        int nps = (int) (promotersPercent - detractorsPercent);
 		//npsValue.put("NPS", nps);
         Map returnValue=new HashMap();
         returnValue.put("NPS", nps);
