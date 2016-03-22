@@ -58,14 +58,20 @@ function drawChart(dataTable, chartType,question) {
 		'title' : question,
 		'width' : 700,
 		'height' : 300,
-		'is3D' : true
+		 min: -10,
+		 max: 100,
+		 redFrom: 90,
+		 redTo: 100,
+         yellowFrom:75, 
+         yellowTo: 90,
+		 is3D : true
 		};
 
 	var chart = new google.visualization.ChartWrapper({
 		containerId : 'chart_div'
 	});
 	// get chart type from ajax
-	chartType = 'Gauge';
+	//chartType = 'Gauge';
 	chart.setChartType(chartType);
 	chart.setOptions(options);
 	// get data from ajax
