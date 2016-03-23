@@ -43,7 +43,7 @@ public class AnalysisFactory {
 		case Map:
 			analysis = geoChartAnalysis;
 			break;
-		case Gauge:
+		case GaugeChart:
 			analysis = gaugeAnalysis;
 		default:
 			break;

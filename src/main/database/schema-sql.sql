@@ -219,7 +219,7 @@ INSERT INTO `charts` (`name`) VALUES ('Linechart');
 insert into charts(name)
 values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
 INSERT INTO `charts` (`name`) VALUES ('GeoChart');
-INSERT INTO `charts` (`name`) VALUES ('GuageChart');
+INSERT INTO `charts` (`name`) VALUES ('GaugeChart');
 
 -- adding linking for gender
 insert into charts_questions(charts_id,questions_id)

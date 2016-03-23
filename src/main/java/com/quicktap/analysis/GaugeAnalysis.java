@@ -39,7 +39,7 @@ public class GaugeAnalysis implements Analysis {
 	public ChartData getChartData(Integer questionId, ChartsEnum chart) {
 
 		Questions question = questionService.getById(questionId);
-		chartData.setChartType(chart);
+		chartData.setChartType(chart.getGoogleValue());
 
 		chartData.setQuestion(Utils.getOnlyTitle(question.getTitle()));
 		Map columns = new LinkedHashMap();
