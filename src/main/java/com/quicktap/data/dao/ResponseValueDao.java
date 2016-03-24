@@ -59,11 +59,11 @@ public class ResponseValueDao {
 		
 		SQLQuery detractorsQuery=
 				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"
-						+ " questions_id = "+questionId+" and value <=4;");
+						+ " questions_id = "+questionId+" and value <=6;");
 		
 		SQLQuery passivesQuery=
 				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"
-						+ " questions_id = "+questionId+" and value >4 and value<=8;");
+						+ " questions_id = "+questionId+" and value >=7 and value<=8;");
 		
 		SQLQuery promotersQuery=
 				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"

@@ -58,7 +58,7 @@ function drawChart(dataTable, chartType,question) {
 		'title' : question,
 		'width' : 700,
 		'height' : 300,
-		 min: -10,
+		 min: -100,
 		 max: 100,
 		 redFrom: 90,
 		 redTo: 100,
