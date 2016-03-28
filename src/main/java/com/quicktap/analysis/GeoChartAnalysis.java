@@ -36,7 +36,7 @@ public class GeoChartAnalysis implements Analysis {
 	@Override
 	public ChartData getChartData(Integer questionId, ChartsEnum chart) {
 		Questions question = questionService.getById(questionId);
-		chartData.setChartType(chart);
+		chartData.setChartType(chart.getGoogleValue());
 
 		Map<String, String> columns = new HashMap<String, String>();
 		columns.put("number", "Lat");

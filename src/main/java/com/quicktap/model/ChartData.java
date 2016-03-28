@@ -19,14 +19,18 @@ import lombok.ToString;
  */
 @Component
 public class ChartData {
-	ChartsEnum chartType;
-	String question;
-	Map columns;
-	Map rows;
-	public ChartsEnum getChartType() {
+	private String chartType;
+	private String question;
+	private Map columns;
+	private Map rows;
+	private String info;
+	
+	
+	
+	public String getChartType() {
 		return chartType;
 	}
-	public void setChartType(ChartsEnum chartType) {
+	public void setChartType(String chartType) {
 		this.chartType = chartType;
 	}
 	public String getQuestion() {
@@ -46,6 +50,12 @@ public class ChartData {
 	}
 	public void setRows(Map rows) {
 		this.rows = rows;
+	}
+	public String getInfo() {
+		return info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	
 	

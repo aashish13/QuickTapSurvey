@@ -129,9 +129,11 @@
 			
 			<!-- page start-->
 			<div style="
-    margin-left: 220px;
-    margin-top: 20px; box-shadow: 0px 0px 50px 0px #888888;">
+    margin-left: 190px;
+    margin-top: 1px; box-shadow: 0px 0px 50px 0px #888888;">
+    			<div id="chart_info"></div>
 				<div id="chart_div" style="width: 4000px"></div>
+				
 			</div>
 			<!-- page end-->
 		</section>

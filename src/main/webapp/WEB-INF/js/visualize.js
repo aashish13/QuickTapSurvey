@@ -18,7 +18,10 @@ $(window).load(
 							url : '' + contextPath + '/getvisualizationdata/'
 									+ chartType + '/' + ($(this).val()),
 							success : function(data) {
-								visualize(data);
+								if(data.chartType=="Quotes")
+									createQuotes(data)
+								else
+									visualize(data);
 							}
 						});
 					});
@@ -29,6 +32,7 @@ function visualize(data) {
 	var chartType = data.chartType;
 	var rows = [];
 	var question = data.question;
+	$('#chart_info').html("<br/>"+data.info);
 	if(chartType==='GeoChart'){
 		dataTable.addColumn('number','Lat');
 		dataTable.addColumn('number','Lon');
@@ -53,19 +57,28 @@ function visualize(data) {
 }
 
 function drawChart(dataTable, chartType,question) {
-
+	if(chartType=='Gauge'){
 	var options = {
 		'title' : question,
 		'width' : 700,
 		'height' : 300,
 		 min: -100,
 		 max: 100,
-		 redFrom: 90,
-		 redTo: 100,
-         yellowFrom:75, 
-         yellowTo: 90,
+		 redFrom: -100,
+		 redTo: 0,
+         greenFrom:1, 
+         greenTo: 100,
 		 is3D : true
-		};
+		};}
+	
+	else{
+		var options = {
+				'title' : question,
+				'width' : 700,
+				'height' : 300,
+				 is3D : true
+				};
+	}
 
 	var chart = new google.visualization.ChartWrapper({
 		containerId : 'chart_div'
@@ -74,7 +87,15 @@ function drawChart(dataTable, chartType,question) {
 	//chartType = 'Gauge';
 	chart.setChartType(chartType);
 	chart.setOptions(options);
+
 	// get data from ajax
 	chart.setDataTable(dataTable);
 	chart.draw();
+}
+
+function createQuotes(data){
+
+//	chart_div
+	for(var i in data.rows)
+		alert(i+"--"+data.rows[i]);
 }

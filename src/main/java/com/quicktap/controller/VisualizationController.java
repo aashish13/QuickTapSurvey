@@ -21,13 +21,14 @@ import com.quicktap.service.QuestionService;
 public class VisualizationController {
 	@Autowired
 	private QuestionService questionService;
-	@RequestMapping(value="visualize/{chart}/{surveyId}")
-	public ModelAndView showCharts(@PathVariable int surveyId,@PathVariable String chart) {
-		Map<Integer,String> questions=questionService.getQuestionsForVisualizationDropDown(chart,surveyId);
-		ModelAndView mv=new ModelAndView("visualize");
-		mv.addObject("questions",questions);
+
+	@RequestMapping(value = "visualize/{chart}/{surveyId}")
+	public ModelAndView showCharts(@PathVariable int surveyId, @PathVariable String chart) {
+		Map<Integer, String> questions = questionService.getQuestionsForVisualizationDropDown(chart, surveyId);
+		ModelAndView mv = new ModelAndView("visualize");
+		mv.addObject("questions", questions);
 		mv.addObject("chartType", chart);
-		//mv.addObject("data",data);
+		// mv.addObject("data",data);
 		return mv;
 	}
 }

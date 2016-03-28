@@ -1,26 +1,20 @@
-/**
- * 
- */
 package com.quicktap.analysis;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.quicktap.Utils;
 import com.quicktap.data.entity.Questions;
+import com.quicktap.data.entity.ResponseValues;
+import com.quicktap.data.entity.Surveys;
 import com.quicktap.model.ChartData;
 import com.quicktap.service.QuestionService;
 import com.quicktap.service.ResponseValueService;
 
-/**
- * @author Aashish
- *
- */
 @Component
-public class CoreAnalysis implements Analysis {
+public class QuotesAnalysis implements Analysis {
 
 	@Autowired
 	private QuestionService questionService;
@@ -29,26 +23,20 @@ public class CoreAnalysis implements Analysis {
 	@Autowired
 	private ChartData chartData;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.quicktap.analysis.Analysis#getChartData(java.lang.Integer,
-	 * java.lang.String)
-	 */
 	@Override
 	public ChartData getChartData(Integer questionId, ChartsEnum chart) {
-
+		// TODO Auto-generated method stub
 		Questions question = questionService.getById(questionId);
 		chartData.setChartType(chart.getGoogleValue());
+		chartData.setQuestion(question.getTitle() + "aashish");
+		Surveys survey = question.getSurveys();
+		
+		Map column = new HashMap();
+		for (ResponseValues rv : question.getResponseValueses()) {
+			column.put(rv.getResponses().getDateCollected(), rv.getValue());
+		}
 
-		chartData.setQuestion(Utils.getOnlyTitle(question.getTitle()));
-		Map columns = new LinkedHashMap();
-		columns.put("string", "Gender");
-		columns.put("number", "Total");
-		chartData.setColumns(columns);
-		Map rows = responseValueService.getResponseWithCount(questionId);
-		chartData.setRows(rows);
-
+		chartData.setRows(column);
 		return chartData;
 	}
 

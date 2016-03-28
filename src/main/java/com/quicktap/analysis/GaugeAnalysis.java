@@ -39,7 +39,7 @@ public class GaugeAnalysis implements Analysis {
 	public ChartData getChartData(Integer questionId, ChartsEnum chart) {
 
 		Questions question = questionService.getById(questionId);
-		chartData.setChartType(chart);
+		chartData.setChartType(chart.getGoogleValue());
 
 		chartData.setQuestion(Utils.getOnlyTitle(question.getTitle()));
 		Map columns = new LinkedHashMap();
@@ -48,6 +48,9 @@ public class GaugeAnalysis implements Analysis {
 		chartData.setColumns(columns);
 		Map rows = responseValueService.getGaugeCalculation(questionId);
 		chartData.setRows(rows);
+		
+		chartData.setInfo("Respondents - "+rows.remove("respondents")+" Promoters -"+rows.remove("promoters")+" Passives -"+rows.remove("passives")
+			+" Detractors - "+rows.remove("detractors")+" Promoters Percent - "+rows.remove("promotersPercent")+" Detractors Percent - "+rows.remove("detractorsPercent"));
 
 		return chartData;
 	}

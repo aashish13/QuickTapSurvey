@@ -45,6 +45,12 @@ public class ResponseValueService {
 		//npsValue.put("NPS", nps);
         Map returnValue=new HashMap();
         returnValue.put("NPS", nps);
+        returnValue.put("promoters", promoters);
+        returnValue.put("detractors", detractors);
+        returnValue.put("passives", passives);
+        returnValue.put("respondents", respondents);
+        returnValue.put("promotersPercent", promotersPercent);
+        returnValue.put("detractorsPercent", detractorsPercent);
 		return returnValue;
 	}
 
