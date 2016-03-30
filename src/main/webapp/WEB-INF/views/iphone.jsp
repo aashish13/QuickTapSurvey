@@ -24,6 +24,8 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/iphone.css" />
 <!-- FontAwesome -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/font-awesome.min.css" />
@@ -106,85 +108,75 @@
 
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 
+
 	<section id="main-content">
-
 		<section class="wrapper" style="padding-bottom: 80px;">
-
 			<h3 style="text-align: center; color: #ee3b24; margin-top: 20px;">
-				<b> Active Surveys</b>
-
+				<b> Preview</b>
 			</h3>
+			<div class="wrapper">
+				<div class="iphone">
+					<div class="power"></div>
+					<div class="lock"></div>
+					<div class="volume up"></div>
+					<div class="volume down"></div>
+					<div class="camera"></div>
+					<div class="speaker"></div>
+					<div class="screen">
+						<!-- Put screen stuff in here -->
 
 
-			<div class="row">
-				<div class="col-md-12 mt">
-					<div class="content-panel">
-						<table class="table table-hover">
-							<h4>
-								<i class="fa fa-angle-right"></i> Survey List
-								<form method="get" action="syncsurvey" style="float: right;">
-									<button type="submit" class="btn btn-round btn-primary"
-										style="width: 95px; margin-left: 830px;">
-										<i class="fa fa-cog"></i> Sync All
-									</button>
-								</form>
-							</h4>
-
-							<br>
-							<thead style="background: #eee; color: black;">
-								<tr>
-									<th><b>#</b></th>
-									<th><b>Survey Id</b></th>
-									<th><b>Survey Name</b></th>
-									<th style="text-align: center;"><b>Responses</b></th>
-									<th><b>Actions</b></th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="survey" items="${surveys}">
-									<tr>
-										<td>${survey.id}</td>
-										<td>${survey.surveyId}</td>
-										<td>${survey.name}</td>
-										<td style="text-align: center;">${survey.totalResponses}</td>
-										<td>
-											<div class="dropdown">
-												<button data-toggle="dropdown"
-													class="btn btn-primary dropdown-toggle">
-													Action <span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu"
-													style="background-color: #294D6D; text-align: center; min-width: 80px; border-color: black; margin: 0 -10px -130px 0; border: 1px solid rgba(0, 0, 0, .15); box-shadow: 0 6px 12px rgb(75, 70, 93);">
+						<div id="global-nav">
+							
+								<span class="dialog"><a href="#" class="close-classic"></a></span>
+								
+									<div class="survey-name">${survey.name}</div>
+									
+									<span id="submit-button">
+										<button type="button" class="btn">Submit</button>
+									</span>
+									
+						</div>
+						<div id="screen-body-outer">
+							<div id="screen-body">
+								<table>
 
 
+									<c:forEach var="question" items="${questions}" varStatus="loop">
+										<tr>
+											<td width="30px"><span style="font-size: 12px">
+													${loop.index+1} <span style="color: red">*</span>
+											</span></td>
+											<td>${question.title}</br> ${rv.value}
+											</td>
+										</tr>
+									</c:forEach>
 
-													<li><a style="color: white"
-														href="response?id=${survey.id}">Responses</a></li>
-													<li><a style="color: white"
-														href="syncresponse/${survey.id}">Sync Now</a></li>
-													<li><a style="color: white" href="charts/${survey.id}">Report</a></li>
-													<li><a style="color: white" href="preview?id=${survey.id}">Preview</a></li>
-												</ul>
-											</div>
-										</td>
 
-
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="button">
+						<div class="square"></div>
 					</div>
 				</div>
-				<!-- /col-md-12 -->
 			</div>
-			<!-- row -->
 		</section>
-
-
 	</section>
+	<!-- /MAIN CONTENT -->
 
 
 	<jsp:include page="footer.jsp" />
+	<script src="${pageContext.request.contextPath}/js/Chart.js"
+		type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/js/chartjs-conf.js"
+		type="text/javascript"></script>
 
+	<script>
+		$(function() {
+			$('select.styled').customSelect();
+		});
+	</script>
 </body>
 </html>
