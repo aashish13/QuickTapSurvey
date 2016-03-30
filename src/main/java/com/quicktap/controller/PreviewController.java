@@ -37,7 +37,7 @@ public class PreviewController {
 		Set<Responses> responses = new HashSet<Responses>(survey.getResponseses());
 		
 		
-		ModelAndView responseMv = new ModelAndView("iphone");
+		ModelAndView responseMv = new ModelAndView("/iphone");
 		responseMv.addObject("survey",survey);
 		responseMv.addObject("responses", responses);
 		responseMv.addObject("questions", questions);
