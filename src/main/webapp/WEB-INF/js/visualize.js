@@ -69,6 +69,9 @@ function drawChart(dataTable, chartType,question) {
 		 redTo: 0,
          greenFrom:1, 
          greenTo: 100,
+         animation:{
+             duration: 1000,
+             easing: 'out',},
 		 is3D : true
 		};}
 	
@@ -96,8 +99,8 @@ function drawChart(dataTable, chartType,question) {
 
 function createQuotes(data){
 
-//	chart_div
 	
 	for(var i in data.rows)
-		$('#chart_div').html($('#chart_div').html()+data.rows[i]);
+		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
+	
 }

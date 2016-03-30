@@ -3,6 +3,8 @@
  */
 package com.quicktap.service;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +35,9 @@ public class ResponseValueService {
 	}
 	public Map getGaugeCalculation(Integer questionId) {
 		// TODO Auto-generated method stub
+		NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumIntegerDigits(1);
+      
 		
 		Map<String,Integer> npsValue=responseValueDao.getNPSValues(questionId);
 		float promoters=npsValue.get("promoters");
@@ -42,15 +47,18 @@ public class ResponseValueService {
 		float promotersPercent = ((promoters/respondents)*100);
 		float detractorsPercent = ((detractors/respondents)*100);
         int nps = (int) (promotersPercent - detractorsPercent);
-		//npsValue.put("NPS", nps);
+        int promotersP = (int) ((promoters/respondents)*100);
+        int detractorsP = (int) ((detractors/respondents)*100);
+        
+		
         Map returnValue=new HashMap();
+        returnValue.put("promoters", nf.format(promoters));
+        returnValue.put("detractors", nf.format(detractors));
+        returnValue.put("passives", nf.format(passives));
+        returnValue.put("respondents", nf.format(respondents));
+        returnValue.put("promotersPercent", promotersP);
+        returnValue.put("detractorsPercent", detractorsP);
         returnValue.put("NPS", nps);
-        returnValue.put("promoters", promoters);
-        returnValue.put("detractors", detractors);
-        returnValue.put("passives", passives);
-        returnValue.put("respondents", respondents);
-        returnValue.put("promotersPercent", promotersPercent);
-        returnValue.put("detractorsPercent", detractorsPercent);
 		return returnValue;
 	}
 

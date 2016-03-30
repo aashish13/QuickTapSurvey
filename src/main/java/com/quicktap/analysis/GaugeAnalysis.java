@@ -49,8 +49,14 @@ public class GaugeAnalysis implements Analysis {
 		Map rows = responseValueService.getGaugeCalculation(questionId);
 		chartData.setRows(rows);
 		
-		chartData.setInfo("Respondents - "+rows.remove("respondents")+"<br/>"+" Promoters -"+rows.remove("promoters")+"<br/>"+" Passives -"+rows.remove("passives")+"<br/>"
-			+" Detractors - "+rows.remove("detractors")+"<br/>"+" Promoters Percent - "+rows.remove("promotersPercent")+"<br/>"+" Detractors Percent - "+rows.remove("detractorsPercent"));
+		chartData.setInfo("Respondents:"+rows.remove("respondents")+"<br/>"
+		        +" Promoters:"+rows.remove("promoters")+"<br/>"
+		        +" Passives:"+rows.remove("passives")+"<br/>"
+			    +" Detractors: "+rows.remove("detractors")+"<br/>"
+		        +" Promoters%: "+rows.remove("promotersPercent")+"<br/>"
+			    +" Detractors%: "+rows.remove("detractorsPercent")
+			    +"<br/>"+" NPS: "+rows.get("NPS")
+			    );
 
 		return chartData;
 	}
