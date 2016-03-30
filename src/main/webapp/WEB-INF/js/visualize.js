@@ -32,7 +32,8 @@ function visualize(data) {
 	var chartType = data.chartType;
 	var rows = [];
 	var question = data.question;
-	$('#chart_info').html("<br/>"+data.info);
+	if(chartType=='Gauge'){
+	$('#chart_info').html("<br/>"+data.info);}
 	if(chartType==='GeoChart'){
 		dataTable.addColumn('number','Lat');
 		dataTable.addColumn('number','Lon');
@@ -96,6 +97,7 @@ function drawChart(dataTable, chartType,question) {
 function createQuotes(data){
 
 //	chart_div
+	
 	for(var i in data.rows)
-		alert(i+"--"+data.rows[i]);
+		$('#chart_div').html($('#chart_div').html()+data.rows[i]);
 }
