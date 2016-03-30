@@ -172,24 +172,56 @@ ENGINE = InnoDB;
 insert into users(username,password,api_key)
 values('aashish','Quicktap123','LYQUPGV1L09BT488LHKDRLYQ7ZGJNU06');
 
-insert into question_types(type)
-values
-('Canadian Postal Code'),
-('Currency Amount'),
-('Date Picker'),
-('Email Address'),
-('Gender(Male/Female)'),
-('Image Display(Splash Screen)'),
-('List Picker'),
-('Map Point'),
-('Matrix - Likert Scale'),
-('MCQ - Image Many Answer')
-;
-INSERT INTO `charts` (`id`,`name`) VALUES (1,'PieChart');
-INSERT INTO `charts` (`id`,`name`) VALUES (2,'BarChart');
-INSERT INTO `charts` (`id`,`name`) VALUES (3,'Linechart');
+
+INSERT INTO `question_types` (`id`,`type`) VALUES (1,'CanadianPostalCode');
+INSERT INTO `question_types` (`id`,`type`) VALUES (2,'CurrencyAmount');
+INSERT INTO `question_types` (`id`,`type`) VALUES (3,'DatePicker');
+INSERT INTO `question_types` (`id`,`type`) VALUES (4,'EmailAddress');
+INSERT INTO `question_types` (`id`,`type`) VALUES (5,'Gender(Male/Female)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (6,'ImageDisplay(SplashScreen)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (7,'ListPicker');
+INSERT INTO `question_types` (`id`,`type`) VALUES (8,'MapPoint');
+INSERT INTO `question_types` (`id`,`type`) VALUES (9,'Matrix-LikertScale');
+INSERT INTO `question_types` (`id`,`type`) VALUES (10,'MCQ-ImageManyAnswer');
+INSERT INTO `question_types` (`id`,`type`) VALUES (11,'DecimalNumber');
+INSERT INTO `question_types` (`id`,`type`) VALUES (12,'MCQ-ImageSingleAnswers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (13,'MCQ-ManyAnswers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (14,'MCQ-SingleAnswers');
+INSERT INTO `question_types` (`id`,`type`) VALUES (15,'NetPromoterScore');
+INSERT INTO `question_types` (`id`,`type`) VALUES (16,'Number');
+INSERT INTO `question_types` (`id`,`type`) VALUES (17,'PDF(IOS)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (18,'PhotoCapture');
+INSERT INTO `question_types` (`id`,`type`) VALUES (19,'QRCodeReader');
+INSERT INTO `question_types` (`id`,`type`) VALUES (20,'Ranking');
+INSERT INTO `question_types` (`id`,`type`) VALUES (21,'SatisfactionRating');
+INSERT INTO `question_types` (`id`,`type`) VALUES (22,'ScratchCard');
+INSERT INTO `question_types` (`id`,`type`) VALUES (23,'SerialNumber(AlphaNumeric)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (24,'SignatureCapture');
+INSERT INTO `question_types` (`id`,`type`) VALUES (25,'Slider');
+INSERT INTO `question_types` (`id`,`type`) VALUES (26,'StarRating');
+INSERT INTO `question_types` (`id`,`type`) VALUES (27,'StopWatch');
+INSERT INTO `question_types` (`id`,`type`) VALUES (28,'Summary');
+INSERT INTO `question_types` (`id`,`type`) VALUES (29,'Telephone(US/Canada)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (30,'Telephone(International)');
+INSERT INTO `question_types` (`id`,`type`) VALUES (31,'Terms&Conditions');
+INSERT INTO `question_types` (`id`,`type`) VALUES (32,'TextDisplay');
+INSERT INTO `question_types` (`id`,`type`) VALUES (33,'TextMultiline');
+INSERT INTO `question_types` (`id`,`type`) VALUES (34,'TextSingleline');
+INSERT INTO `question_types` (`id`,`type`) VALUES (35,'TrueorFalse');
+INSERT INTO `question_types` (`id`,`type`) VALUES (36,'YesorNo');
+INSERT INTO `question_types` (`id`,`type`) VALUES (37,'USZipcode');
+INSERT INTO `question_types` (`id`,`type`) VALUES (38,'WebsiteURL');
+INSERT INTO `question_types` (`id`,`type`) VALUES (39,'WebsiteViewer');
+INSERT INTO `question_types` (`id`,`type`) VALUES (40,'YoutubeVideo');
+INSERT INTO `charts` (`name`) VALUES ('PieChart');
+INSERT INTO `charts` (`name`) VALUES ('BarChart');
+INSERT INTO `charts` (`name`) VALUES ('Linechart');
 insert into charts(name)
 values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
+INSERT INTO `charts` (`name`) VALUES ('GeoChart');
+INSERT INTO `charts` (`name`) VALUES ('GaugeChart');
+INSERT INTO `charts` (`name`) VALUES ('Quotes');
+
 -- adding linking for gender
 insert into charts_questions(charts_id,questions_id)
 values(1,5);
@@ -241,8 +273,12 @@ insert into charts_questions(charts_id,questions_id)
 values(7,14);
 insert into charts_questions(charts_id,questions_id)
 values(8,14);
-
-INSERT INTO `charts` (`name`) VALUES ('GeoChart');
+-- Adding entries for gauge chart and nps
+insert into charts_questions(charts_id,questions_id)
+values(10,15);
+--Adding entries for quotes and multiline question
+insert into charts_questions(charts_id,questions_id)
+values(11,33);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

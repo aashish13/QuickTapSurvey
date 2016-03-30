@@ -23,7 +23,13 @@ public class Utils {
 		return Date.from(Instant.now());
 	}
 	public static int getIdByQuestion(@NonNull String string) {
-		return Integer.valueOf(string.trim().substring(0, 2).trim());
+		try {
+			return Integer.valueOf(string.trim().substring(0, 2).trim());
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
 	}
 	
 	public static String getOnlyTitle(@NonNull String title) {

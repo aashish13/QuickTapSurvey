@@ -53,4 +53,31 @@ public class ResponseValueDao {
 		return returnValue;
 	}
 
+	public Map<String, Integer> getNPSValues(Integer questionId) {
+		// TODO Auto-generated method stub
+
+		
+		SQLQuery detractorsQuery=
+				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"
+						+ " questions_id = "+questionId+" and value <=6;");
+		
+		SQLQuery passivesQuery=
+				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"
+						+ " questions_id = "+questionId+" and value >=7 and value<=8;");
+		
+		SQLQuery promotersQuery=
+				sessionFactory.getCurrentSession().createSQLQuery("select count(value) from response_values where"
+						+ " questions_id = "+questionId+" and value>8;");
+		
+		Map<String, Integer> npsData = new HashMap<String, Integer>();
+		npsData.put("detractors", Integer.parseInt(detractorsQuery.list().get(0).toString()));
+		npsData.put("passives", Integer.parseInt(passivesQuery.list().get(0).toString()));
+		npsData.put("promoters", Integer.parseInt(promotersQuery.list().get(0).toString()));
+			
+		
+		return npsData;
+	}
+	
+
+
 }

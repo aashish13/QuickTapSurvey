@@ -18,18 +18,21 @@ $(window).load(
 							url : '' + contextPath + '/getvisualizationdata/'
 									+ chartType + '/' + ($(this).val()),
 							success : function(data) {
-								visualize(data);
+								if(data.chartType=="Quotes")
+									createQuotes(data)
+								else
+									visualize(data);
 							}
 						});
 					});
 		});
 
 function visualize(data) {
-	// var dataTable = getDataTableValues(null);
 	var dataTable = new google.visualization.DataTable();
 	var chartType = data.chartType;
 	var rows = [];
 	var question = data.question;
+	$('#chart_info').html("<br/>"+data.info);
 	if(chartType==='GeoChart'){
 		dataTable.addColumn('number','Lat');
 		dataTable.addColumn('number','Lon');
@@ -48,40 +51,51 @@ function visualize(data) {
 		for(var i in data.rows)
 			rows.push([i, data.rows[i]]);
 	}
-	
-	
-	
 	dataTable.addRows(rows);	
 	//chartType="Histogram";
 	drawChart(dataTable, chartType,question);
 }
 
 function drawChart(dataTable, chartType,question) {
-
+	if(chartType=='Gauge'){
 	var options = {
 		'title' : question,
 		'width' : 700,
 		'height' : 300,
-		'is3D' : true
-		};
+		 min: -100,
+		 max: 100,
+		 redFrom: -100,
+		 redTo: 0,
+         greenFrom:1, 
+         greenTo: 100,
+		 is3D : true
+		};}
+	
+	else{
+		var options = {
+				'title' : question,
+				'width' : 700,
+				'height' : 300,
+				 is3D : true
+				};
+	}
 
 	var chart = new google.visualization.ChartWrapper({
 		containerId : 'chart_div'
 	});
 	// get chart type from ajax
+	//chartType = 'Gauge';
 	chart.setChartType(chartType);
 	chart.setOptions(options);
+
 	// get data from ajax
 	chart.setDataTable(dataTable);
 	chart.draw();
 }
-function getDataTableValues(dataForDataTable) {
-	var dataTable = new google.visualization.DataTable();
 
-	dataTable.addColumn('string', 'Gender');
-	dataTable.addColumn('number', 'Count');
+function createQuotes(data){
 
-	dataTable.addRows([ [ 'Male', 10 ], [ 'Female', 23 ] ]);
-	return dataTable;
-
+//	chart_div
+	for(var i in data.rows)
+		alert(i+"--"+data.rows[i]);
 }

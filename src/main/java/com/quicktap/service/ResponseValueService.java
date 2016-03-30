@@ -3,6 +3,7 @@
  */
 package com.quicktap.service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,28 @@ public class ResponseValueService {
 	public Map getResponseWithCount(int questionId) {
 		// TODO Auto-generated method stub
 		return responseValueDao.getResponseValueWithCount(questionId);
+	}
+	public Map getGaugeCalculation(Integer questionId) {
+		// TODO Auto-generated method stub
+		
+		Map<String,Integer> npsValue=responseValueDao.getNPSValues(questionId);
+		float promoters=npsValue.get("promoters");
+		float detractors=npsValue.get("detractors");
+		float passives=npsValue.get("passives");
+		float respondents=promoters+detractors+passives;
+		float promotersPercent = ((promoters/respondents)*100);
+		float detractorsPercent = ((detractors/respondents)*100);
+        int nps = (int) (promotersPercent - detractorsPercent);
+		//npsValue.put("NPS", nps);
+        Map returnValue=new HashMap();
+        returnValue.put("NPS", nps);
+        returnValue.put("promoters", promoters);
+        returnValue.put("detractors", detractors);
+        returnValue.put("passives", passives);
+        returnValue.put("respondents", respondents);
+        returnValue.put("promotersPercent", promotersPercent);
+        returnValue.put("detractorsPercent", detractorsPercent);
+		return returnValue;
 	}
 
 }

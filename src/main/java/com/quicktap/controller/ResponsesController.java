@@ -43,6 +43,7 @@ public class ResponsesController {
 		Set<Responses> responses = survey.getResponseses();
 		
 		ModelAndView responseMv = new ModelAndView("response");
+		responseMv.addObject("surveyName", survey.getName());
 		responseMv.addObject("responses", responses);
 		responseMv.addObject("questions", questions);
 		return responseMv;

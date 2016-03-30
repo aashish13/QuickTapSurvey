@@ -71,9 +71,7 @@
 		role="banner">
 		<div class="container">
 			<!-- <div class="row"> -->
-			<div class="navbar-header " style="
-    margin-left: -50px;
-">
+			<div class="navbar-header " style="margin-left: -50px;">
 				<div class="sidebar-toggle-box">
 					<div class="fa fa-bars tooltips" data-placement="right"
 						data-original-title="Toggle Navigation"></div>
@@ -98,9 +96,8 @@
 						class="page-scroll" style="font-size: 18px; font-weight: bolder;"><b>Home</b>
 					</a></li>
 
-					<li><a
-						class="page-scroll" style="font-size: 15px; font-weight: bolder;">Aashish</a>
-					</li>
+					<li><a class="page-scroll"
+						style="font-size: 15px; font-weight: bolder;">Aashish</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -110,33 +107,28 @@
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 
 
-  <section id="main-content">
-          <section class="wrapper" style="padding-bottom: 80px;">
-          <h3 style="
-    text-align: center;
-    color: #ee3b24;
-    margin-top: 20px;
-">
-				<b> Responses</b>
-				
+	<section id="main-content">
+		<section class="wrapper" style="padding-bottom: 80px;">
+			<h3 style="text-align: center; color: #ee3b24; margin-top: 20px;">
+				<b> ${surveyName} </b>
 			</h3>
-              <!-- page start-->
-              <div class="row">
+			
+			<!-- page start-->
+			<div class="row">
 				<div class="col-md-12 mt">
-					<div class="content-panel" style="
-    box-shadow: 0px 0px 50px 0px #aab2bd;
-">
+					<div class="content-panel"
+						style="box-shadow: 0px 0px 50px 0px #aab2bd;">
 						<table class="table table-hover">
 							<!-- <h4>
 								<i class="fa fa-angle-right"></i> Questions
 							</h4> -->
-							<thead style="color:black; ">
+							<thead style="color: black;">
 								<tr>
 
-								<th style="font-weight:600;">Questions User</th>
+									<th style="font-weight: 600;">Questions User</th>
 									<c:forEach var="question" items="${questions}">
-										<th style="font-weight:600;">${question.title}</th>
-								</c:forEach>
+										<th style="font-weight: 600;">${question.title}</th>
+									</c:forEach>
 								</tr>
 								<tr>
 									<%-- <c:forEach var="response" items="${responses}">
@@ -145,28 +137,26 @@
 								</tr>
 							</thead>
 							<tbody>
-							<c:forEach var="response" items="${responses}">
-							<tr>
-							<td style="color:black;"> ${response.userName} <br/> ${response.dateCollected}</td>
-								<c:forEach var="rv" items="${response.responseValueses}">
-													<td>${rv.value}</td>			
+								<c:forEach var="response" items="${responses}">
+									<tr>
+										<td style="color: black;">${response.userName} <br />
+											${response.dateCollected}
+										</td>
+										<c:forEach var="rv" items="${response.responseValueses}">
+											<td>${rv.value}</td>
+										</c:forEach>
+									</tr>
 								</c:forEach>
-							</tr>
-							</c:forEach>
-
-									
 							</thead>
 							<tbody>
-							
+
 								<c:forEach var="survey" items="${surveys}">
 									<tr>
 										<td>${survey.id}</td>
 										<td>${survey.surveyId}</td>
 										<td>${survey.name}</td>
 										<td>${survey.totalResponses}</td>
-										<td>
-											
-										</td>
+										<td></td>
 									</tr>
 								</c:forEach>
 
@@ -176,21 +166,21 @@
 				</div>
 				<!-- /col-md-12 -->
 			</div>
-              <!-- page end-->
-          </section>          
-      </section><!-- /MAIN CONTENT -->
+			<!-- page end-->
+		</section>
+	</section>
+	<!-- /MAIN CONTENT -->
 
-<jsp:include page="footer.jsp" />
-<script src="${pageContext.request.contextPath}/js/Chart.js" type="text/javascript"></script> 
-<script src="${pageContext.request.contextPath}/js/chartjs-conf.js" type="text/javascript"></script> 
- 
-  <script>
-      
+	<jsp:include page="footer.jsp" />
+	<script src="${pageContext.request.contextPath}/js/Chart.js"
+		type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/js/chartjs-conf.js"
+		type="text/javascript"></script>
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
+	<script>
+		$(function() {
+			$('select.styled').customSelect();
+		});
+	</script>
 </body>
 </html>

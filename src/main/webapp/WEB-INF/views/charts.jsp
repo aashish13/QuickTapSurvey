@@ -111,12 +111,23 @@
 				<b> REPORTS</b>
 
 			</h3>
+
+
 			<!-- page start-->
-			<a
-				href="${pageContext.request.contextPath}/visualize/GeoChart/${surveyId}"
-				class="btn btn-main featured"
-				style="width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;">Geo Chart</i>
-			</a>
+
+			<c:forEach var="chart" items="${chartsList}">
+				<a
+					href="${pageContext.request.contextPath}/visualize/${chart.name}/${surveyId}"
+					class="btn btn-main featured"
+					style="width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;">
+					${chart.name}</i>
+				</a>
+			</c:forEach>
+
+
+
+
+			<%-- 
 			<a
 				href="${pageContext.request.contextPath}/visualize/ColumnChart/${surveyId}"
 				class="btn btn-main featured"
@@ -137,9 +148,9 @@
 				href="${pageContext.request.contextPath}/visualize/Histogram/${surveyId}"
 				style="width: 193px; margin-top: 20px; box-shadow: 0px 0px 50px 0px #aab2bd;"
 				class="btn btn-main featured">Histogram</i>
-			</a>
+			</a> --%>
 
-			<div class="tab-pane" id="chartjs">
+			<%-- <div class="tab-pane" id="chartjs">
 				<div class="row mt">
 					<div class="col-lg-6">
 						<div class="content-panel"
@@ -221,7 +232,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<!-- page end-->
 		</section>
 	</section>

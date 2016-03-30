@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quicktap.analysis.ChartsEnum;
 import com.quicktap.model.ChartData;
 import com.quicktap.service.VisualizationService;
 
@@ -21,10 +22,12 @@ import com.quicktap.service.VisualizationService;
 public class AnalysisRestController {
 	@Autowired
 	private VisualizationService visualizationService;
-	
-	@RequestMapping("getvisualizationdata/{chartType}/{questionId}")
-	public ChartData show(@PathVariable int questionId,@PathVariable String chartType){
-		ChartData chartData=visualizationService.getChartData(questionId, chartType);
+
+	@RequestMapping("getvisualizationdata/{chartText}/{questionId}")
+	public ChartData show(@PathVariable int questionId, @PathVariable String chartText) {
+		ChartsEnum chartType = ChartsEnum.valueOf(chartText);
+		ChartData chartData = visualizationService.getChartData(questionId, chartType);
 		return chartData;
 	}
+
 }
