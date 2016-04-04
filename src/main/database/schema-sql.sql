@@ -220,6 +220,7 @@ insert into charts(name)
 values('ColumnChart'),('AreaChart'),('SteppedAreaChart'),('ComboChart '),('Histogram');
 INSERT INTO `charts` (`name`) VALUES ('GeoChart');
 INSERT INTO `charts` (`name`) VALUES ('GaugeChart');
+INSERT INTO `charts` (`name`) VALUES ('Quotes');
 
 -- adding linking for gender
 insert into charts_questions(charts_id,questions_id)
@@ -275,6 +276,9 @@ values(8,14);
 -- Adding entries for gauge chart and nps
 insert into charts_questions(charts_id,questions_id)
 values(10,15);
+--Adding entries for quotes and multiline question
+insert into charts_questions(charts_id,questions_id)
+values(11,33);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

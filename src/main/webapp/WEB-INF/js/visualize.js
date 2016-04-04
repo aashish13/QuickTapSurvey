@@ -18,7 +18,10 @@ $(window).load(
 							url : '' + contextPath + '/getvisualizationdata/'
 									+ chartType + '/' + ($(this).val()),
 							success : function(data) {
-								visualize(data);
+								if(data.chartType=="Quotes")
+									createQuotes(data)
+								else
+									visualize(data);
 							}
 						});
 					});
@@ -29,6 +32,7 @@ function visualize(data) {
 	var chartType = data.chartType;
 	var rows = [];
 	var question = data.question;
+<<<<<<< HEAD
 	if (chartType === 'Map') {
 		dataTable.addColumn('number', 'Lat');
 		dataTable.addColumn('number', 'Lon');
@@ -36,6 +40,16 @@ function visualize(data) {
 			rows.push([ parseFloat(i), parseFloat(data.rows[i]) ]);
 	} else {
 		$.each(data.columns, function(k, v) {
+=======
+	if(chartType=='Gauge'){
+	$('#chart_info').html("<br/>"+data.info);}
+	if(chartType==='GeoChart'){
+		dataTable.addColumn('number','Lat');
+		dataTable.addColumn('number','Lon');
+	}
+	else{
+		$.each(data.columns,function(k,v){
+>>>>>>> 544eeeab0e39af35ee9c1a10a6d3fb3fe0ea7937
 			dataTable.addColumn(k, v);
 		});
 		for ( var i in data.rows)
@@ -47,12 +61,18 @@ function visualize(data) {
 	drawChart(dataTable, chartType, question);
 }
 
+<<<<<<< HEAD
 function drawChart(dataTable, chartType, question) {
 
+=======
+function drawChart(dataTable, chartType,question) {
+	if(chartType=='Gauge'){
+>>>>>>> 544eeeab0e39af35ee9c1a10a6d3fb3fe0ea7937
 	var options = {
 		'title' : question,
 		'width' : 700,
 		'height' : 300,
+<<<<<<< HEAD
 		min : -10,
 		max : 100,
 		redFrom : 90,
@@ -70,6 +90,28 @@ function drawChart(dataTable, chartType, question) {
 		defaultColor : '#f5f5f5',
 		is3D : true
 	};
+=======
+		 min: -100,
+		 max: 100,
+		 redFrom: -100,
+		 redTo: 0,
+         greenFrom:1, 
+         greenTo: 100,
+         animation:{
+             duration: 1000,
+             easing: 'out',},
+		 is3D : true
+		};}
+	
+	else{
+		var options = {
+				'title' : question,
+				'width' : 700,
+				'height' : 300,
+				 is3D : true
+				};
+	}
+>>>>>>> 544eeeab0e39af35ee9c1a10a6d3fb3fe0ea7937
 
 	var chart = new google.visualization.ChartWrapper({
 		containerId : 'chart_div'
@@ -78,7 +120,16 @@ function drawChart(dataTable, chartType, question) {
 	// chartType = 'Gauge';
 	chart.setChartType(chartType);
 	chart.setOptions(options);
+
 	// get data from ajax
 	chart.setDataTable(dataTable);
 	chart.draw();
+}
+
+function createQuotes(data){
+
+	
+	for(var i in data.rows)
+		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
+	
 }

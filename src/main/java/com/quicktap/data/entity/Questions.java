@@ -85,7 +85,7 @@ public class Questions implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "questions")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "questions")
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
 	}
