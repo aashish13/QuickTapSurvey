@@ -20,6 +20,7 @@ public class AnalysisFactory {
 	private GaugeAnalysis gaugeAnalysis;
 	@Autowired
 	private GeoChartAnalysis geoChartAnalysis;
+	
 
 	/**
 	 * @param chartType
@@ -40,8 +41,10 @@ public class AnalysisFactory {
 			analysis = coreAnalysis;
 			break;
 		case GeoChart:
-		case Map:
 			analysis = geoChartAnalysis;
+			break;
+		case Map:
+			analysis = mapAnalysis;
 			break;
 		case GaugeChart:
 			analysis = gaugeAnalysis;

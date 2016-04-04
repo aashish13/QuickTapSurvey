@@ -116,11 +116,10 @@
 			<!-- page start-->
 
 			<c:forEach var="chart" items="${chartsList}">
-				<a
-					href="${pageContext.request.contextPath}/visualize/${chart.name}/${surveyId}"
+				<a href="${pageContext.request.contextPath}/visualize/${chart.name}/${surveyId}"
 					class="btn btn-main featured"
 					style="width: 193px; margin-top: 20px; margin-left: 60px; box-shadow: 0px 0px 50px 0px #aab2bd;">
-					${chart.name}</i>
+					${chart.name}
 				</a>
 			</c:forEach>
 

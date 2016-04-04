@@ -9,10 +9,6 @@ import org.springframework.stereotype.Component;
 
 import com.quicktap.analysis.ChartsEnum;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * @author Aashish
  *

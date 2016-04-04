@@ -30,6 +30,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan("com.quicktap")
 @EnableTransactionManagement
 public class Config extends WebMvcConfigurerAdapter {
+	
+	
+	
+	
 
 	@Bean
 	public InternalResourceViewResolver getInternalViewResolver() {

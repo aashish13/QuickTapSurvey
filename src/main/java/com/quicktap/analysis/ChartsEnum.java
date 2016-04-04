@@ -10,7 +10,7 @@ package com.quicktap.analysis;
 public enum ChartsEnum {
 	PieChart("PieChart"), BarChart("BarChart"), Linechart("Line"), ColumnChart("ColumnChart"), 
 	AreaChart("AreaChart"), SteppedAreaChart("SteppedAreaChart"), ComboChart("ComboChart"), Histogram("Histogram"), 
-	GeoChart("GeoChart"), Map("PieChart"), GaugeChart("Gauge");
+	GeoChart("GeoChart"), Map("Map"), GaugeChart("Gauge");
 	String googleValue;
 	
 	private ChartsEnum(String googleValue) {

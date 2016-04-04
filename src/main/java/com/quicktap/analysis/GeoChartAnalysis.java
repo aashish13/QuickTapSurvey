@@ -3,7 +3,7 @@
  */
 package com.quicktap.analysis;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,15 +37,15 @@ public class GeoChartAnalysis implements Analysis {
 	public ChartData getChartData(Integer questionId, ChartsEnum chart) {
 		Questions question = questionService.getById(questionId);
 		chartData.setChartType(chart.getGoogleValue());
-
-		Map<String, String> columns = new HashMap<String, String>();
-		columns.put("number", "Lat");
-		columns.put("number", "Lon");
+		Map<String, String> columns = new LinkedHashMap<String, String>();
+		columns.put("string", "Provinces");
+		columns.put("number", "Count");
 		chartData.setColumns(columns);
-		Map<Float, Float> rows = responseService.getLatitudeAndLongitude(questionId);
+		//Map<Float, Float> rows = responseService.getLatitudeAndLongitude(questionId);
+		Map<String, Integer> rows = responseService.getRegionFromLatitudeAndLongitude(questionId);
 		chartData.setRows(rows);
-
 		return chartData;
 	}
+	
 
 }
