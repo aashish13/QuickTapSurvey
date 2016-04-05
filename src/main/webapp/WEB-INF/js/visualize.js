@@ -98,8 +98,7 @@ function drawChart(dataTable, chartType,question) {
 }
 
 function createQuotes(data){
-
-	
+	$('#chart_div').html("");
 	for(var i in data.rows)
 		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
 	
