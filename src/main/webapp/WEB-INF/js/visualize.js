@@ -129,3 +129,10 @@ function createOpenTextAnalysis(data) {
 	var wc = new WordCloud(outputDiv);
 	wc.draw(dataTable, {stopWords:'a was too it with may only while used so as be by an and is or A in this that the of for to its'});
 }
+
+function createQuotes(data){
+	$('#chart_div').html("");
+	for(var i in data.rows)
+		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
+
+}

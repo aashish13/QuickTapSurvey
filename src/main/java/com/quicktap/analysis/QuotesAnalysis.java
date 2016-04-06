@@ -34,6 +34,7 @@ public class QuotesAnalysis implements Analysis {
 		for (ResponseValues rv : question.getResponseValueses()) {
 			column.put(rv.getResponses().getDateCollected(), rv.getValue());
 		}
+
 		chartData.setRows(column);
 		return chartData;
 	}
