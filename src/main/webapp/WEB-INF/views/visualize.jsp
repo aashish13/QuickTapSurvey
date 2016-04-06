@@ -52,15 +52,18 @@
 	href="${pageContext.request.contextPath}/css/jquery.fancybox.css?v=2.1.5"
 	type="text/css" media="screen" />
 
+<link rel="stylesheet" type="text/css"
+	href="http://visapi-gadgets.googlecode.com/svn/trunk/wordcloud/wc.css" />
 <script type="text/javascript"
-	src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	src="http://visapi-gadgets.googlecode.com/svn/trunk/wordcloud/wc.js"></script>
 <link href="http://fonts.googleapis.com/css?family=Lato:400,300"
 	rel='stylesheet' type='text/css'>
 <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500"
 	rel='stylesheet' type='text/css'>
-	<!-- Required files for geochart to work -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- Required files for geochart to work -->
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/login/css/style.css">
 
@@ -74,9 +77,7 @@
 		role="banner">
 		<div class="container">
 			<!-- <div class="row"> -->
-			<div class="navbar-header " style="
-    margin-left: -50px;
-">
+			<div class="navbar-header " style="margin-left: -50px;">
 				<div class="sidebar-toggle-box">
 					<div class="fa fa-bars tooltips" data-placement="right"
 						data-original-title="Toggle Navigation"></div>
@@ -101,9 +102,8 @@
 						class="page-scroll" style="font-size: 18px; font-weight: bolder;"><b>Home</b>
 					</a></li>
 
-					<li><a
-						class="page-scroll" style="font-size: 15px; font-weight: bolder;">Aashish</a>
-					</li>
+					<li><a class="page-scroll"
+						style="font-size: 15px; font-weight: bolder;">Aashish</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -112,45 +112,33 @@
 	<%@ include file="/WEB-INF/views/header.jsp"%>
 	<section id="main-content">
 		<section class="wrapper">
-		
-			<h3 style="
-    text-align: center;
-    color: #ee3b24;
-    margin-top: 20px;
-">
+
+			<h3 style="text-align: center; color: #ee3b24; margin-top: 20px;">
 				<b>Data Visualization</b>
-				
+
 				<!-- Code to show all questions for this survey -->
-				<br/><br/></h3>
-				<form:select path="questions" id="all-question">
-					<form:option value="-- Select a question --"></form:option>>
+				<br /> <br />
+			</h3>
+			<form:select path="questions" id="all-question">
+				<form:option value="-- Select a question --"></form:option>>
  					<form:options items="${questions}" />
-				</form:select>
-			
+			</form:select>
+			<br/>
+			<br/>
 			<!-- page start-->
-			<div style="
-    margin-left: 200px;
-    margin-top: 1px; box-shadow: 0px 0px 50px 0px #888888; padding-right:60px">
-    
-    			
-    			
-    			
-    			<div id="chart_info" style="float:right; color:#000000"></div>
-				<div id="chart_div" style="width: 4000px">
-				</div>
-				
-				
+			<div
+				style="margin-left: 200px; margin-top: 1px; box-shadow: 0px 0px 0px 0px #888888; padding-right: 60px">
+				<div id="chart_info" style="float: right; color: #000000"></div>
+				<div id="chart_div" style="width: 4000px"></div>
 			</div>
 			<!-- page end-->
 		</section>
 	</section>
 	<jsp:include page="footer.jsp" />
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script src="${pageContext.request.contextPath}/js/visualize.js"
 		type="text/javascript"></script>
-<script type="text/javascript">
+	<script type="text/javascript">
 		var chartType = '${chartType}';
 	</script>
-
 </body>
 </html>

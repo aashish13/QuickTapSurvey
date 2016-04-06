@@ -20,13 +20,12 @@ public class AnalysisFactory {
 	private GaugeAnalysis gaugeAnalysis;
 	@Autowired
 	private GeoChartAnalysis geoChartAnalysis;
-<<<<<<< HEAD
-	
+	@Autowired
+	private OpenTextAnalysis openTextAnalysis;
 
-=======
 	@Autowired
 	private QuotesAnalysis quotesAnalysis;
->>>>>>> 544eeeab0e39af35ee9c1a10a6d3fb3fe0ea7937
+
 	/**
 	 * @param chartType
 	 * @return
@@ -51,12 +50,14 @@ public class AnalysisFactory {
 		case Map:
 			analysis = mapAnalysis;
 			break;
-		case GaugeChart:
+		case NPS:
 			analysis = gaugeAnalysis;
 			break;
-
 		case Quotes:
 			analysis = quotesAnalysis;
+			break;
+		case OpenTextAnalysis:
+			analysis = openTextAnalysis;
 			break;
 		}
 		return analysis;

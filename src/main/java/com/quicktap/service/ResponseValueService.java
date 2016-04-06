@@ -3,9 +3,9 @@
  */
 package com.quicktap.service;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +60,10 @@ public class ResponseValueService {
         returnValue.put("detractorsPercent", detractorsP);
         returnValue.put("NPS", nps);
 		return returnValue;
+	}
+	
+	public List getValueList(Integer questionId){
+		return responseValueDao.getValueList(questionId);
 	}
 
 }
