@@ -4,7 +4,14 @@
 package com.quicktap;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import com.quicktap.data.entity.Questions;
+import com.quicktap.data.entity.Surveys;
 
 /**
  * @author Aashish
@@ -30,6 +37,17 @@ public class Utils {
 	
 	public static String getOnlyTitle(String title) {
 		return title.substring(title.indexOf("-")+1,title.length());
+	}
+	/**
+	 * @param survey
+	 * @return
+	 */
+	public static Set<Integer> getQuestionTypeListFromSurvey(Set<Questions> set) {
+		Set<Integer> questionIds=new HashSet<>();
+		for (Questions questions : set) {
+			questionIds.add(getIdByQuestion(questions.getTitle()));
+		}
+		return questionIds;
 	}
 	
 	

@@ -64,5 +64,21 @@ public class Charts implements java.io.Serializable {
 	public void setChartsQuestionses(Set<ChartsQuestions> chartsQuestionses) {
 		this.chartsQuestionses = chartsQuestionses;
 	}
-
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return this.getId().equals(((Charts)obj).getId());
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.getId();
+	}
 }
