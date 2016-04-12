@@ -51,5 +51,8 @@ public class ChartsService{
 		}
 		return charts;
 	}
+	public List<Charts> getAllCharts(){
+		return chartsDao.getAllCharts();
+	}
 
 }

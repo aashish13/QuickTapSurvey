@@ -7,15 +7,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
 import javax.persistence.OrderBy;
-
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -59,7 +58,6 @@ public class Surveys implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return this.id;
@@ -106,7 +104,7 @@ public class Surveys implements java.io.Serializable {
 		this.lastSynchTime = lastSynchTime;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	public Set<SurveyUserLinks> getSurveyUserLinkses() {
 		return this.surveyUserLinkses;
 	}
@@ -115,10 +113,7 @@ public class Surveys implements java.io.Serializable {
 		this.surveyUserLinkses = surveyUserLinkses;
 	}
 
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
-	
-
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	public Set<Responses> getResponseses() {
 		return this.responseses;
 	}
@@ -127,10 +122,8 @@ public class Surveys implements java.io.Serializable {
 		this.responseses = responseses;
 	}
 
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@OrderBy("id")
-
 	public Set<Questions> getQuestionses() {
 		return this.questionses;
 	}

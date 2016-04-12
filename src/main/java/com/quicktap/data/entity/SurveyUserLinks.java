@@ -34,7 +34,6 @@ public class SurveyUserLinks implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return this.id;
@@ -44,7 +43,7 @@ public class SurveyUserLinks implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "surveys_id", nullable = false)
 	public Surveys getSurveys() {
 		return this.surveys;
@@ -54,7 +53,7 @@ public class SurveyUserLinks implements java.io.Serializable {
 		this.surveys = surveys;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "users_id", nullable = false)
 	public Users getUsers() {
 		return this.users;

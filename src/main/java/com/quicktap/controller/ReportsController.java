@@ -24,7 +24,8 @@ public class ReportsController {
 	@Autowired private ChartsService chartsService;
 	@RequestMapping(value="/charts/{surveyId}")
 	public ModelAndView showReportsDefaultPage(@PathVariable Integer surveyId){
-		Set<Charts> chartsList=chartsService.getAllChartsForSurvey(surveyId);
+		//Set<Charts> chartsList=chartsService.getAllChartsForSurvey(surveyId);
+		List<Charts> chartsList=chartsService.getAllCharts();
 		ModelAndView mv=new ModelAndView("charts");
 		mv.addObject("surveyId",surveyId);
 		mv.addObject("chartsList",chartsList);

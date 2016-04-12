@@ -6,6 +6,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -120,7 +121,7 @@ public class Responses implements java.io.Serializable {
 		this.longitude = longitude;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "responses")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "responses",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@OrderBy("id")
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
