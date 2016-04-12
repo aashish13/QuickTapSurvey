@@ -1,5 +1,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -124,9 +125,101 @@
 					<div class="speaker"></div>
 					<div class="screen">
 						<!-- Put screen stuff in here -->
+ 
+      <!-- Navigation -->
+      <div class="navbar">
+        <div class="button1 button-left menu"><a>&#10005;</a></div>
+        <div class="title">${survey.name}</div>
+        <div class="button1 button-right">	<button type="button" class="btn">Submit</button> </div>
+      </div>
+      <!-- Pages -->
+      <div id="home" class="page current">
+       </br>
+       <table>
 
 
-						<div id="global-nav">
+									<c:forEach var="question" items="${questions}" varStatus="loop">
+										<tr>
+											<td width="30px"><span style="font-size: 12px">
+													${loop.index+1} <span style="color: red">*</span>
+											</span></td>
+											<td>${question.title}</br><c:set var="string1" value="${question.title}" />
+											<c:set var="string2" value="${fn:substring(string1, 0, 2)}" />
+											<c:set var="string3" value="${fn:trim(string2)}" />
+											<c:choose>
+<c:when test="${string3 == '1'}">
+postal code
+  
+  </c:when>
+  <c:when test="${string3 == '2'}">
+currency amount
+  
+  </c:when>
+  <c:when test="${string3 == '3'}">
+ date picker
+  
+  </c:when>
+  <c:when test="${string3 == '4'}">
+ email address
+  
+  </c:when>
+  <c:when test="${string3 == '5'}">
+  <div class="s3preview">
+
+       <form>
+    <input type="radio" class="button" id="Male" name="gender"></input>
+    <label for="Male">MALE</label>
+    <input type="radio" class="button" id="Female" name="gender"></input>
+    <label for="Female">FEMALE</label>
+  </form>
+</div>
+  
+  </c:when>
+  <c:when test="${string3 == '6'}">
+ image display  
+  </c:when>
+  <c:when test="${string3 == '7'}">
+ list picker
+  
+  </c:when>
+  <c:when test="${string3 == '8'}">
+ map point
+  
+  </c:when>
+  <c:when test="${string3 == '9'}">
+ matrix
+  
+  </c:when>
+  <c:otherwise>
+ mcqs and others
+  
+  </c:otherwise>
+  </c:choose>
+											
+											<c:forEach var="response" items="${responses}">
+<c:forEach var="rv" items="${response.responseValueses}">
+
+<c:choose>
+
+  <c:when test="${question.getQuestionNo()== rv.getQuestions().getQuestionNo()}">
+ 	<td>		
+				</td>
+  </c:when>
+  </c:choose>
+
+										</c:forEach>
+										 	
+											</td>
+										</tr>
+										</c:forEach>
+									</c:forEach>
+
+
+								</table>
+							
+      </div>
+    
+						<%-- <div id="global-nav">
 							
 								<span class="dialog"><a href="#" class="close-classic"></a></span>
 								
@@ -155,7 +248,7 @@
 
 								</table>
 							</div>
-						</div>
+						</div> --%>
 					</div>
 					<div class="button">
 						<div class="square"></div>
