@@ -47,15 +47,10 @@ public class ResponseDao{
 	/**
 	 * @param surveyId
 	 */
-	public Map<Float,Float> getLatitudeAndLongitude(int surveyId) {
+	public List<Responses> getLatitudeAndLongitude(int surveyId) {
 		Criteria criteria=sessionFactory.getCurrentSession().createCriteria(Responses.class);
 		criteria.add(Restrictions.eq("surveys.id", surveyId));
 		List<Responses> responseList=criteria.list();
-		Map<Float,Float> location=new HashMap<Float,Float>();
-		for (Responses response: responseList) {
-			if(response.getLatitude()!=0)
-			location.put(response.getLatitude(), response.getLongitude());
-		}
-		return location;
+		return responseList;
 	}
 }

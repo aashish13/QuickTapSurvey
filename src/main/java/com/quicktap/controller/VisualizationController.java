@@ -25,7 +25,11 @@ public class VisualizationController {
 	@RequestMapping(value = "visualize/{chart}/{surveyId}")
 	public ModelAndView showCharts(@PathVariable int surveyId, @PathVariable String chart) {
 		Map<Integer, String> questions = questionService.getQuestionsForVisualizationDropDown(chart, surveyId);
-		ModelAndView mv = new ModelAndView("visualize");
+		ModelAndView mv;
+		if(chart.equalsIgnoreCase("MAP"))
+			mv= new ModelAndView("heatmapvisualize");
+		else
+			mv= new ModelAndView("visualize");
 		mv.addObject("questions", questions);
 		mv.addObject("chartType", chart);
 		// mv.addObject("data",data);

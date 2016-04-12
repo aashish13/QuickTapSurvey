@@ -280,6 +280,13 @@ values(10,15);
 insert into charts_questions(charts_id,questions_id)
 values(11,33);
 
+-- updating gauge to nps
+update charts set name ='NPS' where id=11;
+
+--adding entries for open text analysis
+insert into charts(name) values('OpenTextAnalysis');
+insert into charts_questions(charts_id,questions_id) values(12,33);
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

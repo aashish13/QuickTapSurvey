@@ -21,7 +21,11 @@ public class AnalysisFactory {
 	@Autowired
 	private GeoChartAnalysis geoChartAnalysis;
 	@Autowired
+	private OpenTextAnalysis openTextAnalysis;
+
+	@Autowired
 	private QuotesAnalysis quotesAnalysis;
+
 	/**
 	 * @param chartType
 	 * @return
@@ -41,15 +45,19 @@ public class AnalysisFactory {
 			analysis = coreAnalysis;
 			break;
 		case GeoChart:
-		case Map:
 			analysis = geoChartAnalysis;
 			break;
-		case GaugeChart:
+		case Map:
+			analysis = mapAnalysis;
+			break;
+		case NPS:
 			analysis = gaugeAnalysis;
 			break;
-
 		case Quotes:
 			analysis = quotesAnalysis;
+			break;
+		case OpenTextAnalysis:
+			analysis = openTextAnalysis;
 			break;
 		}
 		return analysis;

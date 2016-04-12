@@ -28,9 +28,8 @@ public class QuotesAnalysis implements Analysis {
 		// TODO Auto-generated method stub
 		Questions question = questionService.getById(questionId);
 		chartData.setChartType(chart.getGoogleValue());
-		chartData.setQuestion(question.getTitle() + "aashish");
+		chartData.setQuestion(question.getTitle());
 		Surveys survey = question.getSurveys();
-		
 		Map column = new HashMap();
 		for (ResponseValues rv : question.getResponseValueses()) {
 			column.put(rv.getResponses().getDateCollected(), rv.getValue());
@@ -39,5 +38,4 @@ public class QuotesAnalysis implements Analysis {
 		chartData.setRows(column);
 		return chartData;
 	}
-
 }

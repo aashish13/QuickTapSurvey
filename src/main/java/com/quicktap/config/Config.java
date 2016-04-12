@@ -54,7 +54,7 @@ public class Config extends WebMvcConfigurerAdapter {
 	}
 
 	// Below are the configuration required for Hibernate
-	@Bean(name="dataSource")
+	@Bean(name = "dataSource")
 	public DataSource dataSource() {
 		// have used tomcat basicdatasource object if needed will change to
 		// apache commons
@@ -68,7 +68,7 @@ public class Config extends WebMvcConfigurerAdapter {
 
 	// Configuring SessionFactory
 	@Autowired
-	@Bean(name="sessionFactory")
+	@Bean(name = "sessionFactory")
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
@@ -79,13 +79,13 @@ public class Config extends WebMvcConfigurerAdapter {
 
 	private Properties hibernateProperties() {
 		Properties properties = new Properties();
-		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.show_sql", "false");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		return properties;
 	}
 
 	@Autowired
-	@Bean(name="transactionManager")
+	@Bean(name = "transactionManager")
 	public HibernateTransactionManager transactionManager() {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
 		transactionManager.setSessionFactory(sessionFactory().getObject());
