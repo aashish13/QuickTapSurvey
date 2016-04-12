@@ -169,8 +169,6 @@ public class SurveyService {
 	 */
 
 	public Surveys getById(int id) {
-
 		return surveyDao.getById(id);
-
 	}
 }

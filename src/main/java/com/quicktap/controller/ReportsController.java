@@ -4,6 +4,7 @@
 package com.quicktap.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,8 +23,8 @@ import com.quicktap.service.ChartsService;
 public class ReportsController {
 	@Autowired private ChartsService chartsService;
 	@RequestMapping(value="/charts/{surveyId}")
-	public ModelAndView showReportsDefaultPage(@PathVariable int surveyId){
-		List<Charts> chartsList=chartsService.getAllCharts();
+	public ModelAndView showReportsDefaultPage(@PathVariable Integer surveyId){
+		Set<Charts> chartsList=chartsService.getAllChartsForSurvey(surveyId);
 		ModelAndView mv=new ModelAndView("charts");
 		mv.addObject("surveyId",surveyId);
 		mv.addObject("chartsList",chartsList);

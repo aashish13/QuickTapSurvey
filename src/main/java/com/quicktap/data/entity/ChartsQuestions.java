@@ -32,7 +32,6 @@ public class ChartsQuestions implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return this.id;
@@ -42,7 +41,7 @@ public class ChartsQuestions implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "charts_id", nullable = false)
 	public Charts getCharts() {
 		return this.charts;
