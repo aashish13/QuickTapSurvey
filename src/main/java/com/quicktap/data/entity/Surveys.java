@@ -116,7 +116,7 @@ public class Surveys implements java.io.Serializable {
 	}
 
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "surveys")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
 	
 
 	public Set<Responses> getResponseses() {
@@ -128,7 +128,7 @@ public class Surveys implements java.io.Serializable {
 	}
 
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "surveys")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "surveys")
 	@OrderBy("id")
 
 	public Set<Questions> getQuestionses() {

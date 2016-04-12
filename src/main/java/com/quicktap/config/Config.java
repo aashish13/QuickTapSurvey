@@ -81,6 +81,7 @@ public class Config extends WebMvcConfigurerAdapter {
 		Properties properties = new Properties();
 		properties.put("hibernate.show_sql", "false");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+		properties.put("hibernate.enable_lazy_load_no_trans", "true");
 		return properties;
 	}
 

@@ -56,7 +56,7 @@ public class Charts implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "charts")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "charts")
 	public Set<ChartsQuestions> getChartsQuestionses() {
 		return this.chartsQuestionses;
 	}

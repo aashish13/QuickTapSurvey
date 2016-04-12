@@ -65,7 +65,7 @@ public class Responses implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "surveys_id", nullable = false)
 	public Surveys getSurveys() {
 		return this.surveys;
@@ -120,7 +120,7 @@ public class Responses implements java.io.Serializable {
 		this.longitude = longitude;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "responses")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "responses")
 	@OrderBy("id")
 	public Set<ResponseValues> getResponseValueses() {
 		return this.responseValueses;
