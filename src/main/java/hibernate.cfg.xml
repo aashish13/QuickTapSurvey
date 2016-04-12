@@ -9,8 +9,8 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/quicktap</property>
 
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">paperplanes</property>
-        <property name="connection.pool_size">6</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="connection.pool_size">8</property>
         <property name="show_sql">true</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     </session-factory>
