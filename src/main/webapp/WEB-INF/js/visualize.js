@@ -124,6 +124,10 @@ function createOpenTextAnalysis(data) {
 	dataTable.addRows(rows);
 	var outputDiv = document.getElementById('chart_div');
 	var wc = new WordCloud(outputDiv);
+	document.getElementById("chart_div").style.border = "inset  #e6f2ff";
+    document.getElementById("chart_div").style.borderRadius = "25px";
+
+	document.getElementById("chart_div").style.padding="20px";
 	wc
 			.draw(
 					dataTable,
