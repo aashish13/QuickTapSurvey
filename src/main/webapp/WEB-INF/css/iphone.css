@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
 
 input[type=radio],
  input[type=checkbox] {
@@ -116,7 +116,7 @@ a {
     font-size: 95%;
     margin: 9px;
     line-height: 17px;
-    margin-top: 4px;
+    margin-top: 13px;
 }
 
 /* BUTTONS */
@@ -401,4 +401,16 @@ width:25%;
 overflow-y: auto;
 
 
+}
+
+
+.input1 {
+  height: 25px; 
+    width: 200px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: #bdbdbd; 
+    outline:0; 
+    color:black;
 }
