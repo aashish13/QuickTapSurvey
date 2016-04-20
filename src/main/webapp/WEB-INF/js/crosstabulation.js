@@ -15,4 +15,7 @@ $(window).load(
 
 function createCrossTabulation(data){
 	
+	$.each(data, function(k, v) {
+	alert(v.length);
+	});
 }
