@@ -42,7 +42,33 @@ body{
     margin: 0 auto;
     padding: 0;
 }
+.table1{
+	max-width:600px;
+	min-width:600px;
+	margin:0px;padding:0px;
+	border:1px  ;
+	color:#000000;
+	background-color:#e9ebe3;
+	
+}
+.table1 tr{ 
+	background-color:#e4e6eb;  
+    height: 30px; 
+    border-bottom: 1px solid #ddd;
+    max-width:500px;
+    min-width:500px;
+    width:500px;
+}
+.table1 tr:hover {background-color: #78a6ee}
 
+.table1 td{
+	text-align: centre;
+    max-width:250px;
+    min-width:250px;
+    width:250px;
+	margin:10px;}
+
+	
 ol,ul,dl{
     margin:0;
     padding:0;

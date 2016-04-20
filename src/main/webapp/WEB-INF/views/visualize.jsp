@@ -127,9 +127,9 @@
 			<br/>
 			<!-- page start-->
 			<div
-				style="margin-left: 200px; margin-top: 1px; box-shadow: 0px 0px 0px 0px #888888; padding-right: 300px">
-				<div id="chart_info" style="float: right; color: #000000"></div>
-				<div id="chart_div" style="width: 4000px"></div>
+				style="margin-left: 15%; margin-top: 1px; box-shadow: 0px 0px 0px 0px #888888; padding-right: 10%">
+				<div id="chart_info" style="width:30%;float:right; color: #000000"></div>
+				<div id="chart_div" style="width: 45%"></div>
 			</div>
 			<!-- page end-->
 		</section>

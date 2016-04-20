@@ -94,12 +94,8 @@ function drawChart(dataTable, chartType, question) {
 	chart.setDataTable(dataTable);
 	chart.draw();
 }
-function createQuotes(data) {
-	for ( var i in data.rows)
-		$('#chart_div').html(
-				$('#chart_div').html() + "<b>" + "\"" + data.rows[i] + "\""
-						+ "</br>");
-}
+
+
 function createHeatMap(data) {
 	var map, heatmap;
 
@@ -131,8 +127,33 @@ function createOpenTextAnalysis(data) {
 }
 
 function createQuotes(data){
-	$('#chart_div').html("");
-	for(var i in data.rows)
-		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
-
+	var map=new Object();
+	var time=[];
+	for ( var i in data.rows){
+		time.push(i);
+		var d1=Date.parse(i);
+		map[d1]=data.rows[i];
+	}
+  keys=Object.keys(map);
+  l=keys.length;
+  keys.sort();time.sort();
+  if(l>10)l=10;
+   for (var i=l-1;i>=0;i--)
+   {
+	var k=keys[i];
+	$('#chart_div').html(
+    $('#chart_div').html() +"<table class='table1'>"
+    +"<tr class='info'><td>"+ "<b>"+ time[i]+"</td><td>"+"<b>"+"\"" + map[k] + "\""+"</td></tr></table>"
+	+"<br>");
+	
+     }
 }
+
+// function createQuotes(data){
+//	for ( var i in data.rows)
+//	{
+//		$('#chart_div').html(
+//	    $('#chart_div').html() +"<table class='table1'><tr class='info'><td>"+ "<b>"+ i +"</td><td>"+"<b>"+"\"" + data.rows[i] + "\""+"</td></tr></table>"
+//
+//		+"<br>");}
+//	}
