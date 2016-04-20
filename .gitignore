@@ -1,0 +1,10 @@
+ .idea
+ .settings
+ target
+ 
+ hibernate.cfg.xml
+ hibernate.revenge.xml
+  
+  *.class
+  .classpath
+/target/

@@ -1,0 +1,416 @@
+@CHARSET "ISO-8859-1";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+input[type=radio],
+ input[type=checkbox] {
+   display: none;
+ }
+ form input[type="radio"]:checked + label {
+   background-color: #3385ff;
+   color: white;
+ }
+ .s3preview label {
+   display: inline;
+   float: left;
+   appearance: button;
+   -webkit-appearance: button;
+   -moz-appearance: button;
+   -ms-appearance: button;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   background: #ffffff;
+   font-size: 0.7rem;
+   color: #3385ff;
+   border: 1px solid white;
+   padding: 3px;
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* APP */
+
+.app {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position:absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+   margin: 0px;
+  padding: 0px;
+}
+
+/* PAGES */
+
+.page {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 27px;
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.page.current {
+
+  display: block;
+}
+
+/* NAVBAR */
+
+.navbar {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  color: #ffffff;
+  background-color: #0B6ABC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  z-index: 1;
+  
+ 
+}
+
+.navbar .title {
+  position: absolute;
+    left: 39px;
+    right: 54px;
+    text-align: center;
+    font-size: 95%;
+    margin: 9px;
+    line-height: 17px;
+    margin-top: 13px;
+}
+
+/* BUTTONS */
+.btn1{
+	text-decoration:none;
+	color:#333333;
+	font-size:12px;
+	font-weight:bold;
+	padding:0 15px;
+	line-height:32px;
+	height: auto;
+	display:inline-block;
+	text-align:center;
+	background-color:#DDDDDD;
+}
+.btn{
+
+		text-decoration:none;
+background-color:#44c767;	
+color:#ffffff;
+	font-size:12px;
+margin-top:8px;
+width:65px;
+	height:30px;
+padding:0 15px;
+line-height:32px;
+	text-align:center;
+}
+
+.button-left {
+  left: 0;
+ width: 30px;
+}
+
+.button-right {
+  right: 0;
+ 
+}
+
+/* NAVBAR BUTTONS */
+
+.navbar .button1 {
+/*   width: 70px;
+  height: 44px; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.navbar .button1 a {
+  display: block;
+  text-align: center;
+  font-size: 150%;
+ 
+  height: 39px;
+  padding-top: 10px;
+  color: #ffffff;
+}
+
+.navbar .button1 a:active {
+  background-color: #ccc;
+}
+
+
+
+
+
+
+
+.wrapper {
+  max-width: 700px;
+   margin: 0px;
+  padding: 0px;}
+
+.iphone {
+  position: relative;
+  background: #202020;
+  width: 45%;
+  height: 0;
+  padding-top: 95%;
+  margin: 0 auto;
+  border-radius: 3em;
+
+}
+
+.power {
+  position: absolute;
+  background: #202020;
+  width: 13%;
+  height: .5%;
+  top: -.5%;
+  right: 12%;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+}
+
+.lock {
+  position: absolute;
+  background: #202020;
+  width: 1%;
+  height: 5%;
+  top: 12.5%;
+  left: -1%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+.volume {
+  position: absolute;
+  background: #202020;
+  width: 1%;
+  height: 4%;
+  top: 23%;
+  left: -1%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+.volume.down{ top: 31%; }
+
+.camera {
+  position: absolute;
+  top: 4%;
+  left: 48.5%;
+  background: #3f3f3f;
+  width: 3%;
+  height: 0;
+  padding-top: 3%;
+  border-radius: 50%;
+}
+
+.speaker {
+  position: absolute;
+  top: 7%;
+  left: 42.5%;
+  background: #3f3f3f;
+  width: 15%;
+  height: 0;
+  padding-top: 3%;
+  border-radius: 1em;
+}
+
+.appleicon {
+  padding-top: 25%;
+  opacity: 0;
+  animation: unhide 5s infinite alternate;
+}
+
+.appleicon img{
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  opacity: 0;
+  font-size: 1.25rem;
+  text-align: center;
+  animation: unhide 5s infinite alternate;
+}
+
+.screen {
+  background: #2f2f2f;
+  width: 90%;
+  height: 75%;
+  position: absolute;
+  
+  
+  top: 12.5%;
+  left: 5%;
+  color:black;
+  font-family: "arial";
+  animation: lighten 5s infinite alternate;
+}
+
+.button {
+  position: absolute;
+  bottom: 2.75%;
+  left: 42.5%;
+  background: #3f3f3f;
+  /* border: 1px solid #3f3f3f; */
+  width: 15%;
+  height: 0;
+  padding-top: 15%;
+  border-radius: 50%;
+}
+
+.square {
+  position: absolute;
+  top: 27.5%;
+  left: 27.5%;
+  border: 2px solid #d7d7d7;
+  border-radius: .3em;
+  width: 45%;
+  height: 45%;
+}
+
+@media screen and (min-width: 28em ) {
+  body{ font-size: 8px; }
+}
+
+@media screen and (min-width: 34em ) {
+  body{ font-size: 10px; }
+}
+
+@media screen and (min-width: 48em ) {
+  body{ font-size: 14px; }
+}
+
+@keyframes lighten {
+  0%, 45% { background: #ffffff; }
+  65%, 100% { background: #ffffff; }
+}
+
+@keyframes unhide {
+  0%, 55% { opacity: 0 }
+  75%, 100% { opacity: 1 }
+}
+
+
+.close {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+
+  filter: alpha(opacity=20);
+  text-decoration: none;
+}
+.survey-name{
+	color: #ffffff;
+font-size:10px;
+  margin-top: 10px;
+text-align:center;
+   		display:inline-block;
+   
+}
+
+
+
+#close-button{
+	color:#ffffff;
+	-webkit-font-smoothing: antialiased;
+}
+#submit-button{
+}
+/* .btn{
+	
+	background-color:#44c767;	
+	color:#ffffff;
+margin-top: 4px;
+margin-right: 4px;
+	height:30px;
+width:25%;
+	float: right;
+} */
+#global-nav{
+	background:#0B6ABC;
+	height: 10%;
+	width:100%;
+	 display: inline-block;
+
+}
+[class*='close-'] {
+  color: #ffffff;
+  font: 20px/100% arial, sans-serif;
+  position: absolute;
+  left: 7px;
+  padding-right:2px;
+  text-decoration: none;
+  top: 10px;
+}
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+
+}
+#screen-body{
+	 width: 100%;
+  height: 90%;
+  position: absolute;
+	padding-top:10px;
+overflow-y: auto;
+
+
+}
+
+
+.input1 {
+  height: 25px; 
+    width: 200px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: #bdbdbd; 
+    outline:0; 
+    color:black;
+}
