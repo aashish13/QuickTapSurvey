@@ -14,5 +14,5 @@ $(window).load(
 		});
 
 function createCrossTabulation(data){
-	alert(data);
+	
 }
