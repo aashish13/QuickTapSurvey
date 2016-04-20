@@ -24,10 +24,11 @@
          ================================================== -->
 <!-- Bootstrap -->
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
-<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/iphone.css" />
 <!-- FontAwesome -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/font-awesome.min.css" />
 <!-- Animation -->
@@ -190,6 +191,156 @@ currency amount
  matrix
   
   </c:when>
+  <c:when test="${string3 == '10'}">
+ MCQ-ImageManyAnswer
+  
+  </c:when>
+  <c:when test="${string3 == '11'}">
+ DecimalNumber
+  
+  </c:when>
+    <c:when test="${string3 == '12'}">
+ MCQ-ImageSingleAnswers
+  
+  </c:when>
+   <c:when test="${string3 == '13'}">
+ MCQ-ManyAnswers
+  
+  </c:when>
+  <c:when test="${string3 == '14'}">
+ MCQ-SingleAnswers
+  
+  </c:when>
+  <c:when test="${string3 == '15'}">
+NetPromoterScore
+  
+  </c:when>
+  <c:when test="${string3 == '16'}">
+Number
+  
+  </c:when>
+  <c:when test="${string3 == '17'}">
+PDF(IOS)
+  
+  </c:when>
+  <c:when test="${string3 == '18'}">
+PhotoCapture
+  
+  </c:when>
+  <c:when test="${string3 == '19'}">
+ QRCodeReader
+  
+  </c:when>
+  <c:when test="${string3 == '20'}">
+ Ranking
+  
+  </c:when>
+  <c:when test="${string3 == '21'}">
+ SatisfactionRating
+  
+  </c:when>
+  <c:when test="${string3 == '22'}">
+ ScratchCard
+  
+  </c:when>
+  <c:when test="${string3 == '23'}">
+ SerialNumber(AlphaNumeric)
+  
+  </c:when>
+  <c:when test="${string3 == '24'}">
+ SignatureCapture
+  
+  </c:when>
+  <c:when test="${string3 == '25'}">
+ Slider
+  
+  </c:when>
+  <c:when test="${string3 == '26'}">
+ StarRating
+  
+  </c:when>
+  <c:when test="${string3 == '27'}">
+ StopWatch
+  
+  </c:when>
+  <c:when test="${string3 == '28'}">
+ Summary
+  
+  </c:when>
+  <c:when test="${string3 == '29'}">
+ Telephone(US/Canada)
+  
+  </c:when>
+  <c:when test="${string3 == '30'}">
+ Telephone(International)
+  
+  </c:when>
+  <c:when test="${string3 == '31'}">
+ Terms&Conditions
+  
+  </c:when>
+  <c:when test="${string3 == '32'}">
+ TextDisplay
+  
+  </c:when>
+  <c:when test="${string3 == '33'}">
+ <form>
+    <label>
+      <input class="input1" type="text" placeholder="Tap to enter"></input>
+    </label>
+   </form>
+  
+  </c:when>
+  <c:when test="${string3 == '34'}">
+ <form>
+    <label>
+      <input class="input1" type="text" placeholder="Tap to enter"></input>
+    </label>
+   </form>
+  
+  </c:when>
+  <c:when test="${string3 == '35'}">
+   <div class="s3preview">
+
+       <form>
+    <input type="radio" class="button" id="True" name="truefalse"></input>
+    <label for="True">True</label>
+    <input type="radio" class="button" id="False" name="truefalse"></input>
+    <label for="False">False</label>
+  </form>
+</div>
+  
+  
+  </c:when>
+  <c:when test="${string3 == '36'}">
+  <div class="s3preview">
+
+       <form>
+    <input type="radio" class="button" id="Yes" name="yesno"></input>
+    <label for="Yes">Yes</label>
+    <input type="radio" class="button" id="No" name="yesno"></input>
+    <label for="No">No</label>
+  </form>
+</div>
+  
+  </c:when>
+  <c:when test="${string3 == '37'}">
+ USZipcode
+  
+  </c:when>
+  <c:when test="${string3 == '38'}">
+ WebsiteURL
+  
+  </c:when>
+  <c:when test="${string3 == '39'}">
+ WebsiteViewer
+  
+  </c:when>
+  <c:when test="${string3 == '40'}">
+ YoutubeVideo
+  
+  </c:when>
+  
   <c:otherwise>
  mcqs and others
   

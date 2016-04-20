@@ -117,7 +117,10 @@
 			<div class="row">
 				<div class="col-md-12 mt">
 					<div class="content-panel"
-						style="box-shadow: 0px 0px 50px 0px #aab2bd;">
+						style="box-shadow: 0px 0px 50px 0px #aab2bd; overflow: scroll;overflow-x:scroll;
+						 ">
+						<div class="table-responsive">
+					
 						<table class="table table-hover">
 							<!-- <h4>
 								<i class="fa fa-angle-right"></i> Questions
@@ -162,6 +165,7 @@
 
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 				<!-- /col-md-12 -->
