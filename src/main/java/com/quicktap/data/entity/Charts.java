@@ -67,18 +67,18 @@ public class Charts implements java.io.Serializable {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
 		return this.getId().equals(((Charts)obj).getId());
-	}
+	}*/
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
-	@Override
+/*	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
 		return this.getId();
-	}
+	}*/
 }

@@ -62,6 +62,14 @@ public class SurveyDao {
 		Surveys survey=sessionFactory.getCurrentSession().get(Surveys.class, id);
 		return survey;
 	}
+
+	/**
+	 * @param survey
+	 */
+	public void delete(Surveys survey) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().delete(survey);
+	}
 	
 	
 }

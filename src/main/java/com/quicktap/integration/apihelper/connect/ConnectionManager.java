@@ -157,7 +157,7 @@ public class ConnectionManager {
 		try {
 			// do post request
 			String responseData = doPost(url, data);
-			log.debug("responseData:" + responseData);
+//			log.debug("responseData:" + responseData);
 
 			// Deserialize json object
 			response = this.gson.fromJson(responseData, GetSurveyDataResponse.class);

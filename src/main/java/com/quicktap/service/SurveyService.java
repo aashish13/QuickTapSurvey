@@ -160,6 +160,10 @@ public class SurveyService {
 				}
 			}
 		}
+		else{
+			//delete survey if return code is not 30 - GET_SURVEY_RESPONSES_SUCCESS
+			surveyDao.delete(survey);
+		}
 		// saving the survey will update all its child.
 	}
 
