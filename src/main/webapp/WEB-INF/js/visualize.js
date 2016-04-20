@@ -22,6 +22,8 @@ $(window).load(
 									createQuotes(data)
 								else if (data.chartType == "Map")
 									createHeatMap(data)
+								else if (data.chartType == "GeoChart")
+									createGeoChart(data)
 								else if (data.chartType == "OpenTextAnalysis")
 									createOpenTextAnalysis(data)
 								else
@@ -127,12 +129,58 @@ function createOpenTextAnalysis(data) {
 	dataTable.addRows(rows);
 	var outputDiv = document.getElementById('chart_div');
 	var wc = new WordCloud(outputDiv);
-	wc.draw(dataTable, {stopWords:'a was too it with may only while used so as be by an and is or A in this that the of for to its'});
+	wc
+			.draw(
+					dataTable,
+					{
+						stopWords : 'a was too it with may only while used so as be by an and is or A in this that the of for to its'
+					});
 }
 
-function createQuotes(data){
+function createQuotes(data) {
 	$('#chart_div').html("");
-	for(var i in data.rows)
-		$('#chart_div').html($('#chart_div').html()+"<b>"+"\""+data.rows[i]+"\""+"</br>");	
+	for ( var i in data.rows)
+		$('#chart_div').html(
+				$('#chart_div').html() + "<b>" + "\"" + data.rows[i] + "\""
+						+ "</br>");
+
+}
+
+function createGeoChart(data) {
+
+	var data = google.visualization.arrayToDataTable([
+			[ 'Province', 'Count' ],
+			[ "Ontario", 1000],
+			[ "Quebec", 1900],
+			[ "British Columbia", 100],
+			[ "Alberta", 300],
+			[ "Manitoba", 500],
+			[ "Saskatchewan", 600],
+			[ "Nova Scoitia", 30],
+			[ "New Brunswick", 50],
+			[ "Newfoundland and Labrador", 100],
+			[ "Prince Edward Island", 200 ],
+			[ "Northwest Territories", 300 ],
+			["Yukon", 400],
+			["Nunavut", 500]
+			]);
+	
+	var options = {
+		region : 'CA',
+		'width' : 700,
+		'height' : 300,
+		displayMode : 'markers',
+		colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f8bbd0',
+        defaultColor: '#f5f5f5',
+		colorAxis : {
+			colors : [ 'green', 'blue' ]
+		}
+	};
+
+	var chart = new google.visualization.GeoChart(document
+			.getElementById('chart_div'));
+	chart.draw(data, options);
 
 }

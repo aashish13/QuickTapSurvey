@@ -287,6 +287,14 @@ update charts set name ='NPS' where id=11;
 insert into charts(name) values('OpenTextAnalysis');
 insert into charts_questions(charts_id,questions_id) values(12,33);
 
+--Data for cross tabulation
+insert into charts(name) values('CrossTabulation');
+insert into charts_questions(charts_id,questions_id)
+values((select id from charts where name like 'CrossTabulation'),5);
+insert into charts_questions(charts_id,questions_id)
+values((select id from charts where name like 'CrossTabulation'),7);
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

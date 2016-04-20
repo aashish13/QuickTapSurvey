@@ -16,6 +16,7 @@ import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.object.SqlQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -82,8 +83,23 @@ public class ResponseValueDao {
 		SQLQuery sqlQuery = sessionFactory.getCurrentSession()
 				.createSQLQuery("select value from response_values where questions_id=:question_id");
 		sqlQuery.setParameter("question_id", questionId);
-		Session session = sessionFactory.getCurrentSession();
 		return sqlQuery.list();
+	}
+
+	/**
+	 * @param firstId
+	 * @param secondId
+	 * @return
+	 */
+	public List getDataForCrossTabulation(Integer firstId, Integer secondId) {
+		String sqlQueryString = "";
+
+		SQLQuery sqlQuery = sessionFactory.getCurrentSession().createSQLQuery("select r1.value 'v1', r2.value 'v2', count(*) from response_values r1, response_values r2 where r1.questions_id="+firstId+" and r2.questions_id="+secondId+"  group by r2.value, r1.value with rollup ");
+		//sqlQuery.setParameter("firstId", firstId);
+		//sqlQuery.setParameter("secondId", secondId);
+
+		return sqlQuery.list();
+
 	}
 
 }

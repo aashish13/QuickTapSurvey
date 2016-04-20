@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.quicktap.analysis.ChartsEnum;
 import com.quicktap.model.ChartData;
+import com.quicktap.model.CrossTabulationData;
 import com.quicktap.service.VisualizationService;
 
 /**
@@ -28,6 +29,11 @@ public class AnalysisRestController {
 		ChartsEnum chartType = ChartsEnum.valueOf(chartText);
 		ChartData chartData = visualizationService.getChartData(questionId, chartType);
 		return chartData;
+	}
+	@RequestMapping("getCrossTabulationData/{firstId}/{secondId}")
+	public CrossTabulationData show(@PathVariable int firstId, @PathVariable int secondId) {
+		CrossTabulationData crossTabulationData = visualizationService.getChartDataForCrossTabulation(firstId,secondId);
+		return crossTabulationData;
 	}
 
 }

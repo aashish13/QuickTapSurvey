@@ -22,9 +22,10 @@ public class AnalysisFactory {
 	private GeoChartAnalysis geoChartAnalysis;
 	@Autowired
 	private OpenTextAnalysis openTextAnalysis;
-
 	@Autowired
 	private QuotesAnalysis quotesAnalysis;
+	@Autowired
+	private CrossTabulationAnalysis crossTabulationAnalysis;
 
 	/**
 	 * @param chartType
@@ -58,6 +59,9 @@ public class AnalysisFactory {
 			break;
 		case OpenTextAnalysis:
 			analysis = openTextAnalysis;
+			break;
+		case CrossTabulation:
+			analysis = crossTabulationAnalysis;
 			break;
 		}
 		return analysis;

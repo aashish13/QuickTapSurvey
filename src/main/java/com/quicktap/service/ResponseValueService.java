@@ -65,5 +65,14 @@ public class ResponseValueService {
 	public List getValueList(Integer questionId){
 		return responseValueDao.getValueList(questionId);
 	}
+	/**
+	 * @param firstId
+	 * @param secondId
+	 * @return
+	 */
+	public List getDataForCrossTabulation(Integer firstId, Integer secondId) {
+
+		return responseValueDao.getDataForCrossTabulation(firstId,secondId);
+	}
 
 }

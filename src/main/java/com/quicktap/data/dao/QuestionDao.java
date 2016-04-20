@@ -4,7 +4,9 @@
 package com.quicktap.data.dao;
 
 import java.util.List;
+import java.util.Map;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -52,5 +54,15 @@ public class QuestionDao  {
 	public Questions getById(int questionId) {
 		Questions question=sessionFactory.getCurrentSession().get(Questions.class, questionId);
 		return question;
+	}
+
+	/**
+	 * @param surveyId
+	 * @return
+	 */
+	public List<Questions> getBySurveyId(int surveyId) {
+		Criteria criteria=sessionFactory.getCurrentSession().createCriteria(Questions.class);
+		criteria.add(Restrictions.eq("surveys.id", surveyId));
+		return criteria.list();
 	}
 }

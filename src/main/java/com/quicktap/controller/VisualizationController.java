@@ -28,6 +28,8 @@ public class VisualizationController {
 		ModelAndView mv;
 		if(chart.equalsIgnoreCase("MAP"))
 			mv= new ModelAndView("heatmapvisualize");
+		else if (chart.equalsIgnoreCase("CROSSTABULATION"))
+			mv= new ModelAndView("crosstabulation");
 		else
 			mv= new ModelAndView("visualize");
 		mv.addObject("questions", questions);

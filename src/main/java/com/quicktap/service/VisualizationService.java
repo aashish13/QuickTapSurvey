@@ -16,11 +16,13 @@ import com.quicktap.Utils;
 import com.quicktap.analysis.Analysis;
 import com.quicktap.analysis.AnalysisFactory;
 import com.quicktap.analysis.ChartsEnum;
+import com.quicktap.analysis.CrossTabulationAnalysis;
 import com.quicktap.data.entity.Questions;
 import com.quicktap.data.entity.ResponseValues;
 import com.quicktap.data.entity.Responses;
 import com.quicktap.data.entity.Surveys;
 import com.quicktap.model.ChartData;
+import com.quicktap.model.CrossTabulationData;
 
 import jersey.repackaged.com.google.common.collect.Multimap;
 
@@ -41,6 +43,18 @@ public class VisualizationService {
 		Analysis analysisClass=analysisFactory.getAnalysisClass(chartType);
 		ChartData chartData=analysisClass.getChartData(questionId, chartType);
 		return chartData;
+	}
+
+	
+
+	/**
+	 * @param firstId
+	 * @param secondId
+	 * @return
+	 */
+	public CrossTabulationData getChartDataForCrossTabulation(int firstId, int secondId) {
+		CrossTabulationData crossTabulationData=((CrossTabulationAnalysis)(analysisFactory.getAnalysisClass(ChartsEnum.CrossTabulation))).getChartData(firstId,secondId);
+		return crossTabulationData;
 	}
 
 }
