@@ -94,7 +94,7 @@ public class ResponseValueDao {
 	public List getDataForCrossTabulation(Integer firstId, Integer secondId) {
 		String sqlQueryString = "";
 
-		SQLQuery sqlQuery = sessionFactory.getCurrentSession().createSQLQuery("select r1.value 'v1', r2.value 'v2', count(*) from response_values r1, response_values r2 where r1.questions_id="+firstId+" and r2.questions_id="+secondId+"  group by r2.value, r1.value with rollup ");
+		SQLQuery sqlQuery = sessionFactory.getCurrentSession().createSQLQuery("select r1.value 'v1', r2.value 'v2', count(*) from response_values r1, response_values r2 where r1.questions_id="+firstId+" and r2.questions_id="+secondId+"  group by r2.value, r1.value");
 		//sqlQuery.setParameter("firstId", firstId);
 		//sqlQuery.setParameter("secondId", secondId);
 

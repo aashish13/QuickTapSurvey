@@ -59,6 +59,10 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/login/css/style.css">
+	
+	<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 </head>
 <body data-spy="scroll" data-target=".navbar-fixed-top">
