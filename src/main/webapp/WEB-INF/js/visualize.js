@@ -124,11 +124,14 @@ function createOpenTextAnalysis(data) {
 	dataTable.addRows(rows);
 	var outputDiv = document.getElementById('chart_div');
 	var wc = new WordCloud(outputDiv);
+	document.getElementById("chart_div").style.border = "inset #e6f2ff";
+	document.getElementById("chart_div").style.borderRadius = "25px";
+	document.getElementById("chart_div").style.padding = "20px";
 	wc
 			.draw(
 					dataTable,
 					{
-						stopWords : 'a was too it with may only while used so as be by an and is or A in this that the of for to its'
+						stopWords : 'a was too it with may lol only while used so as be by an and is or A in this that the of for to its'
 					});
 }
 
