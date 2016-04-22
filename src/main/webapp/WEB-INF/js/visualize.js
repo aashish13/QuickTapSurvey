@@ -138,28 +138,30 @@ function createOpenTextAnalysis(data) {
 function createGeoChart(data) {
 
 	var data = google.visualization.arrayToDataTable([ [ 'Province', 'Count' ],
-			[ "Ontario", 1000 ], [ "Quebec", 1900 ],
-			[ "British Columbia", 100 ], [ "Alberta", 300 ],
-			[ "Manitoba", 500 ], [ "Saskatchewan", 600 ],
-			[ "Nova Scoitia", 30 ], [ "New Brunswick", 50 ],
-			[ "Newfoundland and Labrador", 100 ],
-			[ "Prince Edward Island", 200 ], [ "Northwest Territories", 300 ],
-			[ "Yukon", 400 ], [ "Nunavut", 500 ] ]);
+			[ "Ontario", data.rows["Ontario"] ],
+			[ "Quebec", data.rows["Quebec"] ],
+			[ "British Columbia", data.rows["British Columbia"]], 
+			[ "Alberta", data.rows["Alberta"]],
+			[ "Manitoba", data.rows["Manitoba"]], 
+			[ "Saskatchewan", data.rows["Saskatchewan"] ],
+			[ "Nova Scoitia", data.rows["Nova Scoitia"]], 
+			[ "New Brunswick", data.rows["New Brunswick"] ],
+			[ "Newfoundland and Labrador", data.rows["Newfoundland and Labrador"] ],
+			[ "Prince Edward Island", data.rows["Prince Edward Island"]], 
+			[ "Northwest Territories", data.rows["Northwest Territories"]],
+			[ "Yukon", data.rows["Yukon"]], 
+			[ "Nunavut", data.rows["Nunavut"] ] ]);
 
 	var options = {
 		region : 'CA',
 		'width' : 700,
 		'height' : 300,
-		displayMode : 'markers',
-		colorAxis : {
-			colors : [ '#00853f', 'black', '#e31b23' ]
-		},
-		backgroundColor : '#81d4fa',
-		datalessRegionColor : '#f8bbd0',
-		defaultColor : '#f5f5f5',
-		colorAxis : {
-			colors : [ 'green', 'blue' ]
-		}
+		displayMode : 'regions',
+		'resolution':'provinces',
+		colorAxis: {colors: ['#acffd3','#00853f']},
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f8bbd0',
+        defaultColor: '#f5f5f5'
 	};
 
 	var chart = new google.visualization.GeoChart(document

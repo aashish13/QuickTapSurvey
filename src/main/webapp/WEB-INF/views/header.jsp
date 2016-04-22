@@ -47,10 +47,10 @@
 			</p>
 			<h5 class="centered">Aashish</h5>
 
-			<li class="mt"><a href="/QuickTapSurvey/survey"> <i class="fa fa-dashboard"></i> <span><b>Dashboard</b></span>
+			<li class="mt"><a href="survey"> <i class="fa fa-dashboard"></i> <span><b>Dashboard</b></span>
 			</a></li>
 
-			<li class="sub-menu"><a href="/QuickTapSurvey/survey"> <i
+			<li class="sub-menu"><a href="survey"> <i
 					class="fa fa-desktop"></i> <span><b>Surveys</b></span>
 			</a></li>
 

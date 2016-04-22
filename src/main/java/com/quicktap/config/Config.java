@@ -63,6 +63,9 @@ public class Config extends WebMvcConfigurerAdapter {
 		dataSource.setUrl("jdbc:mysql://localhost:3306/quicktap");
 		dataSource.setUsername("root");
 		dataSource.setPassword("admin");
+		//dataSource.setUrl("jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_b207881733c2d45?reconnect=true");
+		//dataSource.setUsername("b818f7bf6b5c22");
+		//dataSource.setPassword("ca5e3e14");
 		return dataSource;
 	}
 

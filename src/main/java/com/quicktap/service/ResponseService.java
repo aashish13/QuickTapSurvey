@@ -4,15 +4,19 @@
 package com.quicktap.service;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.quicktap.data.dao.ResponseDao;
 import com.quicktap.data.entity.Responses;
+import com.quicktap.integration.geo.ReverseGeoEncoding;
 
 /**
  * @author Aashish
@@ -24,6 +28,13 @@ public class ResponseService{
 	@Autowired
 	private ResponseDao responseDao;
 	
+	
+	/**
+	 * 
+	 */
+	public ResponseService() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @param rUsername
 	 * @param dateCollected
@@ -60,21 +71,31 @@ public class ResponseService{
 	 * @return
 	 */
 	public Map<String, Integer> getRegionFromLatitudeAndLongitude(Integer questionId) {
-		Map<String,Integer> chartValues= new HashMap<String,Integer>();
-		chartValues.put("Ontario", 1000);
-		chartValues.put("Quebec", 1900);
-		chartValues.put("British Columbia", 100);
-		chartValues.put("Alberta", 300);
-		chartValues.put("Manitoba", 500);
-		chartValues.put("Saskatchewan", 600);
-		chartValues.put("Nova Scoitia", 30);
-		chartValues.put("New Brunswick", 50);
-		chartValues.put("Newfoundland and Labrador", 100);
-		chartValues.put("Prince Edward Island", 200);
-		chartValues.put("Northwest Territories", 300);
-		chartValues.put("Yukon", 400);
-		chartValues.put("Nunavut", 500);
-		return chartValues;
+		
+		Map<String,Integer> provinceCounts=new HashMap<>();
+		
+		provinceCounts.put("Yukon", 0);
+		provinceCounts.put("Northwest Territories", 0);
+		provinceCounts.put("Nunavut", 0);
+		provinceCounts.put("Prince Edward Island", 0);
+		provinceCounts.put("Newfoundland and Labrador", 0);
+		provinceCounts.put("New Brunswick", 0);
+		provinceCounts.put("Nova Scoitia", 0);
+		provinceCounts.put("Saskatchewan", 0);
+		provinceCounts.put("Manitoba", 0);
+		provinceCounts.put("Ontario", 0);
+		provinceCounts.put("Quebec", 0);
+		provinceCounts.put("British Columbia", 0);
+		provinceCounts.put("Alberta", 0);
+		 
+		Map<Float, Float> rows = getLatitudeAndLongitude(questionId);
+
+		for (Map.Entry<Float, Float> entry: rows.entrySet()) {
+			String province=new ReverseGeoEncoding().getProvince(entry.getKey(), entry.getValue(), "CA");
+			if(province!=null)
+				provinceCounts.put(province, (provinceCounts.get(province)+1));
+		}
+		return provinceCounts;
 	}
 	
 	
