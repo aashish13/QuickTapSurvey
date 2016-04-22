@@ -60,14 +60,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/QuickTapSurvey">
+                        <a class="navbar-brand" href="${pageContext.request.contextPath}">
                                 <img src="${pageContext.request.contextPath}/img/logo3.png" alt="" class="img-responsive">
                                 
                         </a>
                  </div><!--Navbar header End-->
                  	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
                         <ul class="nav navbar-nav navbar-right ">
-                           	<li class="active"> <a href="/QuickTapSurvey" class="page-scroll" style="font-size:18px;font-weight:bolder;"><b>Home</b> </a></li>
+                           	<li class="active"> <a href="${pageContext.request.contextPath}" class="page-scroll" style="font-size:18px;font-weight:bolder;"><b>Home</b> </a></li>
                           
                             <li><a href="https://www.quicktapsurvey.com/public/signup/?sourcePage=organic-home&rt=fbt" class="page-scroll" style="font-size:15px;font-weight:bolder;" target="_blank">SignUp</a> </li>
                         </ul>

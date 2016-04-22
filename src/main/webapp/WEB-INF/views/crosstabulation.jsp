@@ -85,7 +85,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/QuickTapSurvey"> <img
+				<a class="navbar-brand" href="${pageContext.request.contextPath}"> <img
 					src="${pageContext.request.contextPath}/img/logo3.png" alt=""
 					class="img-responsive">
 
@@ -95,7 +95,7 @@
 			<nav class="collapse navbar-collapse navigation"
 				id="bs-example-navbar-collapse-1" role="navigation">
 				<ul class="nav navbar-nav navbar-right ">
-					<li class="active"><a href="/QuickTapSurvey"
+					<li class="active"><a href="${pageContext.request.contextPath}"
 						class="page-scroll" style="font-size: 18px; font-weight: bolder;"><b>Home</b>
 					</a></li>
 
