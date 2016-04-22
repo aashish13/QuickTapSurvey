@@ -71,7 +71,7 @@
                             <li><a href="#team" class="page-scroll">Our Team </a> </li>
                             
                             <li><a href="#contact" class="page-scroll">Contact Us</a> </li>
-                            <li><a href="/QuickTapSurvey/login" class="page-scroll">Login</a> </li>
+                            <li><a href="login" class="page-scroll">Login</a> </li>
                         </ul>
                      </nav>
                 </div><!-- /.container-fluid -->
@@ -98,7 +98,7 @@
                        <!-- <a href="#" class="btn btn-dark">
                             <strong>Learn More </strong> </i>
                         </a> -->
-                         <a href="/QuickTapSurvey/login" class="btn btn-main featured">
+                         <a href="login" class="btn btn-main featured">
                             <strong>Join Now </strong> </i>
                         </a>
 
