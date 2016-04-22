@@ -414,3 +414,42 @@ overflow-y: auto;
     outline:0; 
     color:black;
 }
+	
+	
+.button2{
+	font:15px Calibri, Arial, sans-serif;
+text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+
+	text-decoration:none !important;
+	white-space:nowrap;
+	
+	display:inline-block;
+	vertical-align:baseline;
+	position:relative;
+	cursor:pointer;
+	padding:10px 20px;
+
+}
+
+
+.button2.small	{ font-size:13px;}
+
+
+
+.button2.rounded{
+	-moz-border-radius:4em;
+	-webkit-border-radius:4em;
+	border-radius:4em;
+}
+
+
+.green.button2{
+	color:grey !important;
+	border:1px solid grey !important;	
+	background-color: white;
+	
+
+
+}
+
+	

@@ -131,7 +131,7 @@
       <div class="navbar">
         <div class="button1 button-left menu"><a>&#10005;</a></div>
         <div class="title">${survey.name}</div>
-        <div class="button1 button-right">	<button type="button" class="btn">Submit</button> </div>
+        <div class="button1 button-right">	<button type="button" class="btn" style="margin-left: -68px;">Submit</button> </div>
       </div>
       <!-- Pages -->
       <div id="home" class="page current">
@@ -180,7 +180,12 @@ currency amount
  image display  
   </c:when>
   <c:when test="${string3 == '7'}">
- list picker
+  
+ <img alt="" width="25" height="25" src="http://freshinbox.com/blog/wp-content/uploads/2015/01/hamburger-square-150x150.gif">
+ <span style="color:grey; vertical-align:middle; display: inline-block;
+    margin-top: -16px;">Tap to pick your answer</span>
+
+  
   
   </c:when>
   <c:when test="${string3 == '8'}">
@@ -204,11 +209,11 @@ currency amount
   
   </c:when>
    <c:when test="${string3 == '13'}">
- MCQ-ManyAnswers
+<a href="#" class="button2 small green rounded">Tap to select</a>
   
   </c:when>
   <c:when test="${string3 == '14'}">
- MCQ-SingleAnswers
+<a href="#" class="button2 small green rounded">Tap to select</a>
   
   </c:when>
   <c:when test="${string3 == '15'}">
